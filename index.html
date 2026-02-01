@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The "Solo Founder + AI" Narrative — TrendLoom.io Signal Analysis</title>
+<meta name="description" content="111 claims analyzed. Genesis → Acceleration → Reckoning. A TrendLoom.io Signal Analysis by Elena Tsemirava.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--coral:#E8624A;--coral-light:#F5A896;--coral-bg:#FFF5F2;--dark:#2C3E50;--dark-soft:#3D4F5F;--mid:#555;--light:#888;--cream:#FDF8F5;--white:#FFF;--warm-gray:#F7F3F0;--border:#E8E0DA;--green:#27AE60;--amber:#E67E22;--red:#C0392B}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+::-webkit-scrollbar{height:4px;width:4px}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(253,248,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap}
+.nav-inner{display:flex;max-width:900px;margin:0 auto;padding:0 24px}
+.nav-btn{padding:14px 16px;background:none;border:none;border-bottom:2px solid transparent;color:var(--mid);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.nav-btn.active{border-bottom-color:var(--coral);color:var(--coral);font-weight:600}
+
+/* LAYOUT */
+.container{max-width:900px;margin:0 auto;padding:40px 24px 80px}
+header{padding:48px 24px 40px;max-width:900px;margin:0 auto;animation:slideUp .6s ease}
+section{margin-bottom:64px}
+
+/* TYPOGRAPHY */
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,5vw,42px);font-weight:700;color:var(--dark);line-height:1.15}
+h2{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:6px}
+.section-sub{font-size:14px;color:var(--light);letter-spacing:.02em;margin-bottom:12px}
+.section-bar{width:48px;height:3px;background:var(--coral);border-radius:2px;margin-bottom:32px}
+.subtitle{font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,3vw,24px);font-style:italic;color:var(--mid);margin-top:8px}
+
+/* BADGE */
+.badge{display:inline-block;font-size:12px;font-weight:600;color:var(--coral);text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;background:var(--coral-bg);border-radius:4px;margin-bottom:24px}
+
+/* CARDS */
+.card{background:var(--white);border-radius:12px;border:1px solid var(--border);overflow:hidden}
+.card-pad{padding:24px}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat-card{background:var(--white);border-radius:10px;border:1px solid var(--border);padding:20px 16px;text-align:center}
+.stat-num{font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;color:var(--coral);line-height:1}
+.stat-label{font-size:12px;color:var(--light);margin-top:6px}
+
+/* PERIOD ACCORDION */
+.period-btn{width:100%;padding:20px 24px;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:16px;text-align:left}
+.period-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:16px}
+.period-title{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:var(--dark)}
+.period-year{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;color:var(--light);margin-left:10px}
+.period-subtitle{font-size:13px;color:var(--mid);margin-top:2px}
+.period-arrow{font-size:18px;color:var(--light);transition:transform .3s;margin-left:auto}
+.period-arrow.open{transform:rotate(180deg)}
+.period-body{padding:0 24px 24px;display:none}
+.period-body.open{display:block;animation:fadeIn .3s ease}
+.period-summary{font-size:15px;line-height:1.7;color:var(--dark-soft);padding:16px 20px;border-radius:0 8px 8px 0;margin-bottom:20px}
+.period-label{font-size:12px;font-weight:600;color:var(--light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.period-text{font-size:14px;line-height:1.7;color:var(--mid);margin-bottom:20px}
+.period-item{font-size:13px;color:var(--mid);padding:8px 12px;background:var(--warm-gray);border-radius:6px;margin-bottom:6px}
+.period-item.warn{color:var(--red);background:#FFEBEE}
+.inflection-box{padding:14px 16px;border-radius:8px;margin-top:16px}
+.inflection-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.inflection-text{font-size:14px;color:var(--dark-soft);margin-top:6px;line-height:1.6}
+
+/* TIMELINE */
+.tl-wrap{position:relative;padding-left:92px}
+.tl-line{position:absolute;left:76px;top:8px;bottom:8px;width:2px;border-radius:1px;background:linear-gradient(to bottom,var(--green),var(--amber),var(--red))}
+.tl-row{display:flex;align-items:center;gap:16px;padding:8px 0;transition:opacity .2s;cursor:default}
+.tl-date{font-size:11px;color:var(--light);width:64px;text-align:right;flex-shrink:0;position:absolute;left:0}
+.tl-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--white);flex-shrink:0;z-index:1;position:absolute;left:72px}
+.tl-content{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:0}
+.tl-type{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
+.tl-event{font-size:13px;color:var(--dark-soft)}
+
+/* POSTER CHILDREN */
+.filter-btn{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--mid);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s}
+.filter-btn.active{border-color:var(--coral);background:rgba(232,98,74,.07);color:var(--coral)}
+.poster-card{background:var(--white);border-radius:10px;border:1px solid var(--border);padding:18px 20px;margin-bottom:10px;animation:fadeIn .3s ease}
+.poster-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.poster-name{font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:600;color:var(--dark)}
+.poster-claim{font-size:13px;color:var(--light);margin-left:10px}
+.verdict-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;white-space:nowrap}
+.poster-reality{font-size:13px;color:var(--mid);line-height:1.6}
+
+/* ECOSYSTEM */
+.eco-row{background:var(--white);border:1px solid var(--border);padding:16px 20px;display:grid;grid-template-columns:minmax(120px,1fr) minmax(100px,1fr) 2fr auto;gap:12px;align-items:center}
+.eco-row:first-child{border-radius:10px 10px 2px 2px}
+.eco-row:last-child{border-radius:2px 2px 10px 10px}
+.eco-layer{font-size:13px;font-weight:600;color:var(--dark)}
+.eco-model{font-size:12px;color:var(--light)}
+.eco-examples{font-size:12px;color:var(--mid)}
+.eco-dep{font-size:10px;font-weight:700;letter-spacing:.04em}
+
+/* SIGNAL */
+.signal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.signal-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.signal-dot{width:8px;height:8px;border-radius:50%}
+.signal-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.signal-item{font-size:13px;color:var(--dark-soft);line-height:1.6;padding:10px 0;border-bottom:1px solid var(--border)}
+.signal-item:last-child{border-bottom:none}
+
+/* PREDICTIONS */
+.pred-card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:24px;margin-bottom:16px;animation:fadeIn .3s ease}
+.pred-num{font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;color:rgba(232,98,74,.19);line-height:1;flex-shrink:0;margin-right:16px}
+.pred-title{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:600;color:var(--dark);line-height:1.3;margin-bottom:10px}
+.pred-body{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:12px}
+.pred-watch{font-size:13px;font-weight:500;color:var(--coral);font-style:italic}
+
+/* FOOTER CTA */
+.footer-cta{margin-top:48px;padding:32px 24px;background:var(--white);border-radius:12px;border:1px solid var(--border);text-align:center}
+.cta-title{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:6px;line-height:1.4}
+.cta-sub{font-size:14px;color:var(--mid);margin-bottom:20px;line-height:1.6}
+.cta-btn{display:inline-block;padding:14px 32px;background:var(--coral);color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;border-radius:8px;text-decoration:none;letter-spacing:.01em;transition:opacity .2s}
+.cta-btn:hover{opacity:.9}
+.cta-sources{font-size:11px;color:var(--light);margin-top:16px}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .eco-row{grid-template-columns:1fr;gap:4px}
+  .tl-wrap{padding-left:92px}
+  .nav-inner{padding:0 12px}
+  header,.container{padding-left:16px;padding-right:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="badge">TrendLoom.io Signal Analysis</span>
+  <h1>The "Solo Founder + AI" Narrative</h1>
+  <p class="subtitle">Genesis → Acceleration → Reckoning</p>
+  <div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:20px;font-size:12px;color:var(--light)">
+    <span>111 claims analyzed</span><span>·</span>
+    <span>32 revenue claims</span><span>·</span>
+    <span>8 verified</span><span>·</span>
+    <span>7 inflated</span>
+  </div>
+  <div style="font-size:12px;color:var(--light);margin-top:6px">Prepared: February 1, 2026 · Elena Tsemirava, TrendLoom.io</div>
+</header>
+
+<nav>
+  <div class="nav-inner" id="navInner"></div>
+</nav>
+
+<div class="container">
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <h2>Executive Summary</h2>
+    <p class="section-sub">Cross-referencing 111 claims with independent verification</p>
+    <div class="section-bar"></div>
+
+    <div class="card" style="margin-bottom:28px">
+      <div class="card-pad">
+        <div style="font-size:12px;font-weight:600;color:var(--coral);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Verdict</div>
+        <p style="font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px;line-height:1.4">The narrative is bifurcating, not maturing.</p>
+        <p style="font-size:14px;line-height:1.7;color:var(--mid)">The "solo founder + AI" narrative has split into two parallel tracks: an intensifying hype layer (prediction pundits, course sellers, and content recyclers pushing "one-person unicorn by 2026") and an emerging evidence layer (security researchers, burned-out founders, and code auditors documenting the real ceiling). These tracks are barely talking to each other.</p>
+      </div>
+    </div>
+
+    <div class="stats-grid" id="statsGrid"></div>
+  </section>
+
+  <!-- THREE PERIODS -->
+  <section id="periods">
+    <h2>The Three Periods</h2>
+    <p class="section-sub">How the narrative evolved from grounded to speculative</p>
+    <div class="section-bar"></div>
+    <div id="periodsContainer"></div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <h2>Timeline of Inflection Points</h2>
+    <p class="section-sub">16 key events from Jan 2023 to Jan 2026</p>
+    <div class="section-bar"></div>
+    <div class="card"><div class="card-pad" id="timelineContainer"></div></div>
+  </section>
+
+  <!-- POSTER CHILDREN -->
+  <section id="poster">
+    <h2>How the "Poster Children" Changed</h2>
+    <p class="section-sub">The narrative's examples evolved from genuine to misrepresented</p>
+    <div class="section-bar"></div>
+    <div id="filterBar" style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap"></div>
+    <div id="posterContainer"></div>
+  </section>
+
+  <!-- ECOSYSTEM -->
+  <section id="ecosystem">
+    <h2>The Five-Layer Narrative Ecosystem</h2>
+    <p class="section-sub">Each layer feeds and amplifies the one above it</p>
+    <div class="section-bar"></div>
+    <p style="font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:20px">The biggest "AI solopreneur" revenues come from teaching solopreneurship, not from AI products.</p>
+    <div id="ecoContainer" style="display:flex;flex-direction:column;gap:2px"></div>
+  </section>
+
+  <!-- SIGNAL VS NOISE -->
+  <section id="signal">
+    <h2>Signal vs. Noise</h2>
+    <p class="section-sub">Separating verified findings from inflated claims</p>
+    <div class="section-bar"></div>
+    <div class="signal-grid" id="signalContainer"></div>
+  </section>
+
+  <!-- PREDICTIONS -->
+  <section id="predictions">
+    <h2>Three Predictions for 2026</h2>
+    <p class="section-sub">Based on cross-referencing 111 claims with independent verification</p>
+    <div class="section-bar"></div>
+    <div id="predsContainer"></div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <p class="cta-title">Want this level of signal clarity for your market?</p>
+    <p class="cta-sub">TrendLoom.io detects market shifts 3–6 months early so you can move before your competitors notice.</p>
+    <a href="https://cal.com/trendloom/trendloom-intro-call" target="_blank" rel="noopener noreferrer" class="cta-btn">Book a Signal Briefing →</a>
+    <p class="cta-sources">Sources: Carta, Veracode, GitClear, DORA, Stack Overflow, Fast Company, Fortune, TechCrunch, Indie Hackers, HN</p>
+  </div>
+
+</div>
+
+<script>
+// DATA
+const navItems=[{id:"overview",label:"Overview"},{id:"periods",label:"Three Periods"},{id:"timeline",label:"Timeline"},{id:"poster",label:"Poster Children"},{id:"ecosystem",label:"Ecosystem"},{id:"signal",label:"Signal vs Noise"},{id:"predictions",label:"Predictions"}];
+
+const stats=[{value:"111",label:"Claims Analyzed"},{value:"25%",label:"Revenue Claims Verified"},{value:"50%",label:"Top Cases Had Hidden Teams"},{value:"33%",label:"Dev Trust in AI Code"}];
+
+const periods=[
+{id:"genesis",label:"Genesis",year:"2023",subtitle:"Pre-Mainstream AI Coding Tools",color:"#27AE60",
+summary:"The discourse was grounded in real product stories with modest benchmarks and honest hit rates. Solo founding was a lifestyle choice, not a tech-enabled thesis.",
+discourse:'In January 2023, Karpathy tweeted "The hottest new programming language is English" — a philosophical claim, not yet a practical one. The solo founder conversation centered on indie hackers building micro-SaaS: Pieter Levels was the poster child, but his success predated AI (started 2014) and used vanilla PHP/jQuery.',
+tools:["ChatGPT (Nov 2022) and GPT-4 (Mar 2023) — conversational, not integrated into coding workflows","GitHub Copilot (launched 2022) — autocomplete, not agentic","No-code tools: Bubble, Zapier, Notion — pre-AI era platforms","Stable Diffusion for image generation"],
+inflection:'September 2023: Sam Altman reveals his "one-person unicorn" betting pool with tech CEOs. This is the moment the narrative detaches from evidence.'},
+{id:"acceleration",label:"Acceleration",year:"Jan–Sep 2024",subtitle:"Cursor, GPT-4, Claude Artifacts",color:"#E67E22",
+summary:"The narrative went mainstream. Fortune and Forbes ran cover stories. Claim specificity cratered as the same 4–5 examples got recycled across 20+ articles.",
+discourse:'Fortune ran "One-person unicorn" as a cover story in January 2024. The discourse shifted from practitioner stories to prediction punditry. New actors entered: VC thought-leaders, Forbes columnists, LinkedIn influencers.',
+claims:['Base44 acquired by Wix for $80M — framed as "solo founder exit" (actually had 8 employees)',"Danny Postma's HeadshotPro hit $300K/mo — then burned out, hired team",'Justin Welsh\'s $4.15M framed as "AI solopreneur" — actually courses about solopreneurship','"My AI Co-Founder" Substack launched June 2024'],
+shift:'The conversation migrated from Indie Hackers and r/SaaS (practitioners) to LinkedIn, Forbes, and Medium (amplifiers). Medium/blog sources had the lowest reliability (avg specificity: 2.2/5) while Indie Hackers had the highest (4.1/5).'},
+{id:"reckoning",label:"Reckoning",year:"Oct 2024–Jan 2026",subtitle:"Claude Code, Cursor Mainstream, Vibe Coding",color:"#C0392B",
+summary:"Peak hype collides with hard evidence. The counter-narrative emerges but hasn't yet displaced the hype cycle.",
+discourse:'February 2025: Karpathy coined "vibe coding" — 4.5M+ views. Named Collins Dictionary Word of the Year 2025. YC W2025 batch: 25% of startups had 95% AI-generated codebases.',
+evidence:["Lovable: 170/1,645 apps leaked personal data","Builder.ai filed bankruptcy ($445M funding evaporated)","Replit agent deleted a production database",'Fast Company: "The vibe coding hangover is upon us"'],
+sentiment:"Stack Overflow 2025 survey: positive sentiment toward AI tools dropped to 60% (from 70%+ in 2023–24). Only 33% trust AI code accuracy, while 46% actively distrust it."}
+];
+
+const tlData=[
+{date:"Jan 2023",type:"Inflection",event:'Karpathy: "The hottest new programming language is English"',p:0},
+{date:"Feb 2023",type:"Milestone",event:"Pieter Levels launches PhotoAI",p:0},
+{date:"Mar 2023",type:"Inflection",event:"GPT-4 released",p:0},
+{date:"Jul 2023",type:"Milestone",event:"PhotoAI hits $61.8K MRR",p:0},
+{date:"Sep 2023",type:"Inflection",event:"Sam Altman reveals one-person unicorn betting pool",p:0},
+{date:"Jan 2024",type:"Narrative",event:'Fortune runs "One-person unicorn" cover story',p:1},
+{date:"Mar 2024",type:"Inflection",event:"Cursor gains mass adoption",p:1},
+{date:"Aug 2024",type:"Milestone",event:"Levels passes $100K/mo",p:1},
+{date:"Sep 2024",type:"Milestone",event:"Base44 acquired by Wix for $80M (8 employees)",p:1},
+{date:"Feb 2025",type:"Inflection",event:'Karpathy coins "vibe coding" — 4.5M+ views',p:2},
+{date:"Mar 2025",type:"Milestone",event:"YC W2025: 25% of startups have 95% AI-generated code",p:2},
+{date:"May 2025",type:"Inflection",event:"Lovable data leak. Amodei: solo unicorn by 2026.",p:2},
+{date:"Jul 2025",type:"Milestone",event:"Replit agent deletes prod DB. Builder.ai bankruptcy.",p:2},
+{date:"Sep 2025",type:"Narrative",event:'"Vibe coding hangover is upon us"',p:2},
+{date:"Nov 2025",type:"Milestone",event:"Cursor: $1B ARR (~150 people)",p:2},
+{date:"Jan 2026",type:"Inflection",event:"Veracode: 45% AI code has security flaws",p:2}
+];
+
+const posterData=[
+{person:"Pieter Levels",claim:"$138K MRR solo",reality:"Started 2014. 40+ projects, ~5% hit rate. Uses NO AI coding tools.",verdict:"Real but Misframed"},
+{person:"Tony Dinh",claim:"$45K/mo solo",reality:"Nearly killed by Twitter API changes. First product abandoned.",verdict:"Real but Fragile"},
+{person:"Base44 / Shlomo",claim:"$80M solo exit",reality:"Had 8 employees at exit. $25M retention bonus for staff.",verdict:"Inflated"},
+{person:"HeadshotPro",claim:"$300K/mo solo",reality:"Burned out, took 3-month break. Now has team.",verdict:"Real but Fragile"},
+{person:"Justin Welsh",claim:'$4.15M "AI solopreneur"',reality:"Revenue from courses ABOUT solopreneurship. Started 2019.",verdict:"Misattributed"},
+{person:"Kleo 2.0",claim:"$62K MRR solo",reality:"THREE co-founders with 480K combined LinkedIn followers.",verdict:"Inflated"},
+{person:"Midjourney",claim:"$200M / 11 staff",reality:"Actually 107–163 employees. Revenue $500M. Lean ≠ solo.",verdict:"Inflated"}
+];
+
+const verdictColors={"Real but Misframed":{bg:"#FFF8E1",text:"#F57F17",border:"#FFE082"},"Real but Fragile":{bg:"#FFF3E0",text:"#E65100",border:"#FFCC80"},"Inflated":{bg:"#FFEBEE",text:"#C62828",border:"#EF9A9A"},"Misattributed":{bg:"#FBE9E7",text:"#BF360C",border:"#FFAB91"}};
+
+const ecoData=[
+{layer:"1. AI Products",model:"SaaS subscriptions",examples:"PhotoAI ($138K), HeadshotPro, Magai",dep:"HIGH",depColor:"var(--red)"},
+{layer:"2. Builder Tools",model:"Templates / subs",examples:"ShipFast ($80K/mo), Cursor ($1B ARR)",dep:"MEDIUM",depColor:"var(--amber)"},
+{layer:"3. Course Sellers",model:"Courses, cohorts",examples:"Welsh ($4.15M/yr), Ole ($270K)",dep:"LOW",depColor:"var(--green)"},
+{layer:"4. Content Recyclers",model:"Ads, SEO, lead gen",examples:"Medium listicles, LinkedIn posts",dep:"NONE",depColor:"var(--light)"},
+{layer:"5. Prediction Pundits",model:"Speaking, consulting",examples:"Altman betting pool, Forbes pieces",dep:"NONE",depColor:"var(--light)"}
+];
+
+const signalReal=["Solo founding is rising structurally: 36.3% of startups in H1 2025 (Carta)","AI genuinely accelerates prototyping — MVPs in weeks, micro-SaaS in weekends","Lean teams can reach massive revenue: Midjourney $500M with 107–163 people","Solo SaaS always worked pre-AI: Readlang (2012) hit €14K/mo"];
+const signalNoise=['"One-person unicorn is imminent" — zero exist. Only 14.7% of VC cash goes to solo founders.','"Solo" often means "was solo for 6 months" — Base44 had 8 employees at exit.',"Lean (10–160 people) gets conflated with solo (1 person) constantly.","Pre-AI successes rebranded as AI-era proof. Same 4–5 examples power ~80% of all evidence."];
+
+const predsData=[
+{num:"01",title:'The "6-Month Wall" becomes the dominant counter-narrative',body:'GitClear\'s 8x code duplication data, Veracode\'s 45% security flaw rate, and Fast Company\'s "vibe coding hangover" report are the leading edge. Expect a wave of postmortems from founders who hit the architectural ceiling at 3–6 months.',watch:"Watch r/SaaS and r/startups — this is the deflation indicator."},
+{num:"02",title:'"Solo" gets redefined to "lean"',body:"The data shows lean teams (Midjourney: 107–163 → $500M; Cursor: ~150 → $1B ARR) are the actual breakthrough, not solo individuals. The productivity-per-employee story is real and investable. The one-person story is aspirational content marketing.",watch:'Expect the narrative to shift from "one-person unicorn" to "10-person decacorn."'},
+{num:"03",title:"Course economics will outperform product economics",body:"Welsh ($4.15M from courses) and Ole ($270K from courses) prove that teaching AI solopreneurship is more profitable than doing it. This meta-layer will continue to grow as more founders try, hit the ceiling, and pivot to selling the dream.",watch:"The gold rush's real winners sell shovels."}
+];
+
+// RENDER NAV
+const navEl=document.getElementById('navInner');
+let activeNav='overview';
+navItems.forEach(n=>{
+  const b=document.createElement('button');
+  b.className='nav-btn'+(n.id===activeNav?' active':'');
+  b.textContent=n.label;
+  b.dataset.id=n.id;
+  b.onclick=()=>{document.getElementById(n.id)?.scrollIntoView({behavior:'smooth',block:'start'})};
+  navEl.appendChild(b);
+});
+
+// Scroll spy
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      activeNav=e.target.id;
+      document.querySelectorAll('.nav-btn').forEach(b=>{
+        b.classList.toggle('active',b.dataset.id===activeNav);
+      });
+    }
+  });
+},{threshold:0.2,rootMargin:'-80px 0px -40% 0px'});
+navItems.forEach(n=>{const el=document.getElementById(n.id);if(el)observer.observe(el)});
+
+// STATS
+const sg=document.getElementById('statsGrid');
+stats.forEach(s=>{
+  sg.innerHTML+=`<div class="stat-card"><div class="stat-num">${s.value}</div><div class="stat-label">${s.label}</div></div>`;
+});
+
+// PERIODS
+const pc=document.getElementById('periodsContainer');
+let openPeriod=0;
+function renderPeriods(){
+  pc.innerHTML='';
+  periods.forEach((p,i)=>{
+    const letters=['A','B','C'];
+    const isOpen=openPeriod===i;
+    let html=`<div class="card" style="margin-bottom:12px">
+      <button class="period-btn" data-idx="${i}">
+        <div class="period-icon" style="background:${p.color}18;color:${p.color}">${letters[i]}</div>
+        <div style="flex:1"><div class="period-title">${p.label}<span class="period-year">${p.year}</span></div><div class="period-subtitle">${p.subtitle}</div></div>
+        <span class="period-arrow${isOpen?' open':''}">▾</span>
+      </button>
+      <div class="period-body${isOpen?' open':''}">
+        <div class="period-summary" style="background:${p.color}0A;border-left:3px solid ${p.color}">${p.summary}</div>
+        <div class="period-label">Discourse</div>
+        <p class="period-text">${p.discourse}</p>`;
+    if(p.tools){
+      html+=`<div class="period-label">Tools Available</div>`;
+      p.tools.forEach(t=>{html+=`<div class="period-item">${t}</div>`});
+    }
+    if(p.claims){
+      html+=`<div class="period-label" style="margin-top:12px">Key Claims</div>`;
+      p.claims.forEach(c=>{html+=`<div class="period-item">${c}</div>`});
+    }
+    if(p.shift){html+=`<p class="period-text" style="margin-top:12px">${p.shift}</p>`}
+    if(p.evidence){
+      html+=`<div class="period-label" style="margin-top:12px">Hard Evidence Emerging</div>`;
+      p.evidence.forEach(e=>{html+=`<div class="period-item warn">⚠ ${e}</div>`});
+    }
+    if(p.inflection){
+      html+=`<div class="inflection-box" style="background:rgba(232,98,74,.05);border:1px dashed rgba(232,98,74,.25)"><div class="inflection-label" style="color:var(--coral)">Inflection Point</div><p class="inflection-text">${p.inflection}</p></div>`;
+    }
+    if(p.sentiment){
+      html+=`<div class="inflection-box" style="background:#FFF8E1;margin-top:16px"><div class="inflection-label" style="color:#F57F17">Sentiment Shift</div><p class="inflection-text">${p.sentiment}</p></div>`;
+    }
+    html+=`</div></div>`;
+    pc.innerHTML+=html;
+  });
+  pc.querySelectorAll('.period-btn').forEach(b=>{
+    b.onclick=()=>{const idx=+b.dataset.idx;openPeriod=openPeriod===idx?-1:idx;renderPeriods()};
+  });
+}
+renderPeriods();
+
+// TIMELINE
+const tc=document.getElementById('timelineContainer');
+const colors=['#27AE60','#E67E22','#C0392B'];
+let tlHtml='<div style="position:relative">';
+tlHtml+='<div style="position:absolute;left:76px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#27AE60,#E67E22,#C0392B);border-radius:1px"></div>';
+tlData.forEach((t,i)=>{
+  const c=colors[t.p];
+  const typeMap={Inflection:{bg:c+'18',text:c},Milestone:{bg:'var(--warm-gray)',text:'var(--mid)'},Narrative:{bg:'rgba(232,98,74,.1)',text:'var(--coral)'}};
+  const tc2=typeMap[t.type];
+  tlHtml+=`<div class="tl-row" style="position:relative;padding-left:92px;min-height:40px">
+    <span class="tl-date">${t.date}</span>
+    <div class="tl-dot" style="background:${c};box-shadow:0 0 0 2px ${c}40"></div>
+    <div class="tl-content">
+      <span class="tl-type" style="background:${tc2.bg};color:${tc2.text}">${t.type}</span>
+      <span class="tl-event">${t.event}</span>
+    </div>
+  </div>`;
+});
+tlHtml+='</div>';
+tc.innerHTML=tlHtml;
+
+// POSTER CHILDREN
+let activeFilter=null;
+function renderPoster(){
+  const fb=document.getElementById('filterBar');
+  const pc2=document.getElementById('posterContainer');
+  const verdicts=Object.keys(verdictColors);
+  let fHtml=`<button class="filter-btn${!activeFilter?' active':''}" data-v="">All (${posterData.length})</button>`;
+  verdicts.forEach(v=>{
+    const count=posterData.filter(p=>p.verdict===v).length;
+    fHtml+=`<button class="filter-btn${activeFilter===v?' active':''}" data-v="${v}">${v} (${count})</button>`;
+  });
+  fb.innerHTML=fHtml;
+  fb.querySelectorAll('.filter-btn').forEach(b=>{
+    b.onclick=()=>{activeFilter=b.dataset.v||null;renderPoster()};
+  });
+  const filtered=activeFilter?posterData.filter(p=>p.verdict===activeFilter):posterData;
+  let pHtml='';
+  filtered.forEach(p=>{
+    const vc=verdictColors[p.verdict];
+    pHtml+=`<div class="poster-card">
+      <div class="poster-header">
+        <div><span class="poster-name">${p.person}</span><span class="poster-claim">${p.claim}</span></div>
+        <span class="verdict-badge" style="color:${vc.text};background:${vc.bg};border:1px solid ${vc.border}">${p.verdict}</span>
+      </div>
+      <p class="poster-reality">${p.reality}</p>
+    </div>`;
+  });
+  pc2.innerHTML=pHtml;
+}
+renderPoster();
+
+// ECOSYSTEM
+const ec=document.getElementById('ecoContainer');
+ecoData.forEach(l=>{
+  ec.innerHTML+=`<div class="eco-row">
+    <span class="eco-layer">${l.layer}</span>
+    <span class="eco-model">${l.model}</span>
+    <span class="eco-examples">${l.examples}</span>
+    <span class="eco-dep" style="color:${l.depColor}">${l.dep}</span>
+  </div>`;
+});
+
+// SIGNAL VS NOISE
+const sc=document.getElementById('signalContainer');
+let sHtml=`<div class="card"><div class="card-pad">
+  <div class="signal-header"><div class="signal-dot" style="background:var(--green)"></div><span class="signal-label" style="color:var(--green)">What's Real (Signal)</span></div>`;
+signalReal.forEach(s=>{sHtml+=`<div class="signal-item">✓ ${s}</div>`});
+sHtml+=`</div></div><div class="card"><div class="card-pad">
+  <div class="signal-header"><div class="signal-dot" style="background:var(--red)"></div><span class="signal-label" style="color:var(--red)">What's Inflated (Noise)</span></div>`;
+signalNoise.forEach(s=>{sHtml+=`<div class="signal-item">✗ ${s}</div>`});
+sHtml+=`</div></div>`;
+sc.innerHTML=sHtml;
+
+// PREDICTIONS
+const prc=document.getElementById('predsContainer');
+predsData.forEach(p=>{
+  prc.innerHTML+=`<div class="pred-card"><div style="display:flex">
+    <span class="pred-num">${p.num}</span>
+    <div><div class="pred-title">${p.title}</div><p class="pred-body">${p.body}</p><div class="pred-watch">${p.watch}</div></div>
+  </div></div>`;
+});
+</script>
+</body>
+</html>
