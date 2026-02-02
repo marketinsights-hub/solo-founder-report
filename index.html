@@ -164,6 +164,13 @@ section { margin-bottom: 64px; }
 .cta-btn:hover { background: #D4553E; box-shadow: 0 6px 20px rgba(232,98,74,0.35); }
 .sources { margin-top: 24px; padding: 16px 0; text-align: center; font-size: 12px; color: var(--light); }
 
+/* Methodology Note */
+.methodology { margin-top: 48px; padding: 32px 36px; background: var(--warm-gray); border-radius: 12px; border: 1px solid var(--border); }
+.methodology-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 700; color: var(--dark); display: inline; }
+.methodology p { font-size: 13px; color: var(--dark-soft); line-height: 1.75; margin-bottom: 14px; display: inline; }
+.methodology p + p { display: block; margin-top: 14px; }
+.methodology p:last-child { margin-bottom: 0; }
+
 /* ── Mobile hamburger nav ── */
 .nav-toggle { display: none; background: none; border: none; padding: 12px 0; cursor: pointer; font-family: 'DM Sans', sans-serif; width: 100%; }
 .nav-toggle-inner { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 10px 16px; }
@@ -261,6 +268,10 @@ section { margin-bottom: 64px; }
   .cta-card { padding: 28px 20px; margin-top: 36px; }
   .cta-title { font-size: 19px; }
   .cta-btn { padding: 12px 28px; font-size: 14px; }
+
+  /* Methodology */
+  .methodology { padding: 24px 20px; margin-top: 36px; }
+  .methodology p { font-size: 12px; line-height: 1.7; }
 
   /* Filter pills scroll */
   .filter-row { gap: 6px; }
@@ -505,6 +516,22 @@ section { margin-bottom: 64px; }
 
 <!-- Sources -->
 <div class="sources">Sources: Carta, Veracode, GitClear, DORA, Stack Overflow, Fast Company, Fortune, TechCrunch, Indie Hackers, HN, Reddit, X, LinkedIn</div>
+
+<!-- Methodology Note -->
+<div class="methodology">
+  <span class="methodology-title">Methodology note.</span>
+  <p> This analysis draws from 111 discrete claims collected across three source layers: press and media coverage (Fortune, Forbes, Fast Company, TechCrunch, and Indie Hackers — approximately 30+ articles spanning January 2023 to January 2026, with particular concentration on "one-person unicorn" framing); social discourse across Reddit (r/SaaS, r/startups, r/SideProject), Twitter/X, LinkedIn, Hacker News, and YouTube/podcast transcripts (approximately 60+ threads and posts); and independent verification sources including Carta cap-table data, Veracode security audits, GitClear code-quality reports, DORA engineering metrics, and Stack Overflow developer surveys.</p>
+
+  <p>Each claim was coded at the sentence level into one of four categories — Revenue Claim, Team-Size Claim, Tool Capability Claim, and Prediction/Opinion — using a rule-based codebook. Revenue claims required a specific dollar figure or revenue range attributed to a named individual or company. Team-size claims required an explicit headcount or "solo" designation. Ambiguous cases were resolved conservatively: claims without a named source or verifiable figure were excluded rather than estimated. Of 111 claims coded, 32 were revenue-specific; of those, 8 (25%) were independently verified through Carta filings, public financial disclosures, or direct founder confirmation, while 7 (22%) were found to be inflated upon cross-referencing with company registries, LinkedIn headcounts, or acquisition documents (e.g., Base44's reported "solo exit" involved 8 employees and $25M in staff retention bonuses per Wix acquisition filings).</p>
+
+  <p>Temporal analysis divided the narrative into three periods — Genesis (2023), Acceleration (January–September 2024), and Reckoning (October 2024–present) — based on inflection points identified through discourse-volume shifts and tool-availability changes. Period boundaries were set at points where the dominant framing measurably changed: Genesis ends when Sam Altman's "one-person unicorn" betting pool detaches the narrative from evidence (September 2023); Acceleration ends when counter-evidence begins appearing systematically in developer communities (late 2024).</p>
+
+  <p>The "poster children" analysis examined seven individuals and companies most frequently cited as proof of the solo founder thesis. For each case, the media-framed claim was compared against independently verifiable data: Pieter Levels' origin story (founded 2014, codes in vanilla PHP/jQuery without AI tools), Midjourney's actual headcount (107–163 employees per LinkedIn and Glassdoor, not 11), Justin Welsh's revenue source (courses about solopreneurship, not AI products), and Kleo 2.0's founding team (three co-founders with 480K combined LinkedIn followers). Narrative framing labels (e.g., "Real but Misframed," "Inflated") reflect how the media positioned each case, not the founders' own claims. Disconfirming evidence was actively sought.</p>
+
+  <p>The five-layer ecosystem taxonomy (AI Products → Builder Tools → Course Sellers → Content Recyclers → Prediction Pundits) emerged inductively from the data through thematic clustering of business models described across sources. The "Revenue Scale Paradox" column was added to highlight a pattern the data surfaced repeatedly: layers with the lowest AI dependency (courses, content) generate the highest and most stable revenue, while layers with the highest AI dependency (AI-native products) show the most fragile unit economics.</p>
+
+  <p>Limitations: this analysis is qualitative, not purposive. The 111-claim corpus captures the most-cited and most-shared claims in the solo founder discourse, not a representative sample of all claims ever made. Verification was limited to publicly available data; private financial records were not accessed. Where the data did not support the hypothesis, the analysis says so — notably, the counter-evidence layer is growing but still thinner than the hype layer in volume.</p>
+</div>
 
 </main>
 
