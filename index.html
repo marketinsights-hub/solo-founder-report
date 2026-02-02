@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The "Solo Founder + AI" Narrative — TrendLoom Signal Analysis</title>
-<meta name="description" content="Genesis → Acceleration → Reckoning. 111 claims analyzed, cross-referenced with independent verification. By Elena Tsemirava, TrendLoom.">
-<meta property="og:title" content="The Solo Founder + AI Narrative — TrendLoom Signal Analysis">
-<meta property="og:description" content="111 claims analyzed. 25% verified. The narrative is bifurcating, not maturing.">
+<meta name="description" content="Temporal analysis of the Solo Founder + AI narrative: Genesis → Acceleration → Reckoning (2023–2026). 111 claims analyzed, 32 revenue claims, 8 verified, 7 inflated.">
+<meta property="og:title" content="The 'Solo Founder + AI' Narrative — TrendLoom Signal Analysis">
+<meta property="og:description" content="111 claims cross-referenced with independent verification. The narrative is bifurcating, not maturing.">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,826 +28,773 @@
   --amber: #E67E22;
   --red: #C0392B;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--cream);
-  color: var(--mid);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-::-webkit-scrollbar { height: 4px; width: 6px; }
+body { background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--mid); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+::-webkit-scrollbar { height: 4px; width: 4px; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-
 @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
-
-.serif { font-family: 'Playfair Display', Georgia, serif; }
-.sans { font-family: 'DM Sans', sans-serif; }
-
-/* Layout */
-.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-section { margin-bottom: 64px; scroll-margin-top: 72px; }
 
 /* Header */
-.header { padding: 48px 0 40px; animation: slideUp 0.6s ease; }
-.badge {
-  display: inline-block;
-  font-size: 12px; font-weight: 600; color: var(--coral);
-  text-transform: uppercase; letter-spacing: 0.1em;
-  padding: 4px 10px; background: var(--coral-bg); border-radius: 4px;
-  margin-bottom: 24px;
-}
-.header h1 {
-  font-size: clamp(28px, 5vw, 42px); font-weight: 700;
-  color: var(--dark); line-height: 1.15;
-}
-.header .subtitle {
-  font-size: clamp(18px, 3vw, 24px); font-weight: 400;
-  font-style: italic; color: var(--mid); margin-top: 8px;
-}
-.header .meta { font-size: 12px; color: var(--light); margin-top: 20px; }
-.header .meta span + span::before { content: ' · '; }
+.header { padding: 48px 24px 40px; max-width: 900px; margin: 0 auto; animation: slideUp 0.6s ease; }
+.header-tag { font-size: 12px; font-weight: 600; color: var(--coral); text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; background: var(--coral-bg); border-radius: 4px; display: inline-block; margin-bottom: 24px; }
+.header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--dark); line-height: 1.15; }
+.header .subtitle { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 24px); font-weight: 400; font-style: italic; color: var(--mid); margin-top: 8px; }
+.header .meta { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 20px; font-size: 12px; color: var(--light); }
+.header .byline { font-size: 12px; color: var(--light); margin-top: 6px; }
 
 /* Nav */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(253,248,245,0.92); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  overflow-x: auto; white-space: nowrap;
-}
-nav .nav-inner { display: flex; gap: 0; max-width: 900px; margin: 0 auto; padding: 0 24px; }
-nav a {
-  padding: 14px 16px; text-decoration: none;
-  border-bottom: 2px solid transparent;
-  color: var(--mid); font-size: 13px; font-weight: 400;
-  transition: all 0.2s; white-space: nowrap;
-}
-nav a:hover, nav a.active { color: var(--coral); border-bottom-color: var(--coral); font-weight: 600; }
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(253,248,245,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; overflow-x: auto; white-space: nowrap; }
+.nav-inner { display: flex; gap: 0; max-width: 900px; margin: 0 auto; }
+.nav button { padding: 14px 16px; background: none; border: none; border-bottom: 2px solid transparent; color: var(--mid); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 400; cursor: pointer; transition: all 0.2s; letter-spacing: 0.01em; white-space: nowrap; }
+.nav button.active { border-bottom-color: var(--coral); color: var(--coral); font-weight: 600; }
+.nav button:hover { color: var(--coral); }
+
+/* Main */
+main { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+section { margin-bottom: 64px; }
 
 /* Section Title */
-.section-title h2 {
-  font-size: 28px; font-weight: 700; color: var(--dark); line-height: 1.2;
-}
-.section-title .sub {
-  font-size: 14px; color: var(--light); margin-top: 6px; letter-spacing: 0.02em;
-}
-.section-title .bar {
-  width: 48px; height: 3px; background: var(--coral);
-  border-radius: 2px; margin-top: 12px; margin-bottom: 32px;
-}
+.section-title h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: var(--dark); line-height: 1.2; }
+.section-title .sub { font-size: 14px; color: var(--light); margin-top: 6px; letter-spacing: 0.02em; }
+.section-title .bar { width: 48px; height: 3px; background: var(--coral); border-radius: 2px; margin-top: 12px; }
+.section-title { margin-bottom: 32px; }
 
 /* Cards */
-.card {
-  background: var(--white); border-radius: 12px;
-  border: 1px solid var(--border); padding: 24px;
-}
-.card + .card { margin-top: 12px; }
+.card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); }
+.verdict-box { padding: 24px; margin-bottom: 28px; }
+.verdict-label { font-size: 12px; font-weight: 600; color: var(--coral); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.verdict-title { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 12px; line-height: 1.4; }
+.verdict-body { font-size: 14px; line-height: 1.7; color: var(--mid); }
 
 /* Stats Grid */
-.stats-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px; margin-top: 28px;
-}
-.stat-card { text-align: center; padding: 20px 16px; }
-.stat-card .value {
-  font-size: 32px; font-weight: 700; color: var(--coral); line-height: 1;
-}
-.stat-card .label { font-size: 12px; color: var(--light); margin-top: 6px; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.stat-card { background: var(--white); border-radius: 10px; border: 1px solid var(--border); padding: 20px 16px; text-align: center; }
+.stat-value { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; color: var(--coral); line-height: 1; }
+.stat-label { font-size: 12px; color: var(--light); margin-top: 6px; }
 
-/* Verdict box */
-.verdict-box .tag {
-  font-size: 12px; font-weight: 600; color: var(--coral);
-  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;
-}
-.verdict-box h3 {
-  font-size: 20px; font-weight: 600; color: var(--dark);
-  margin-bottom: 12px; line-height: 1.4;
-}
-.verdict-box p { font-size: 14px; line-height: 1.7; }
-
-/* Period Accordion */
-.period-card { overflow: hidden; transition: all 0.3s; }
+/* Period Cards */
+.period-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; transition: all 0.3s; margin-bottom: 12px; }
 .period-card.open { box-shadow: 0 4px 24px rgba(44,62,80,0.08); }
-.period-header {
-  width: 100%; padding: 20px 24px; background: none; border: none;
-  cursor: pointer; display: flex; align-items: center; gap: 16px; text-align: left;
-}
-.period-icon {
-  width: 42px; height: 42px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.period-icon span { font-weight: 700; font-size: 16px; }
-.period-header .title { font-size: 18px; font-weight: 700; color: var(--dark); }
-.period-header .year { font-size: 13px; font-weight: 400; color: var(--light); margin-left: 10px; }
-.period-header .sub { font-size: 13px; color: var(--mid); margin-top: 2px; }
-.period-arrow {
-  font-size: 18px; color: var(--light); transition: transform 0.3s;
-}
+.period-header { width: 100%; padding: 20px 24px; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 16px; text-align: left; font-family: inherit; }
+.period-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 16px; }
+.period-label { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--dark); }
+.period-year { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 400; color: var(--light); margin-left: 10px; }
+.period-sub { font-size: 13px; color: var(--mid); margin-top: 2px; }
+.period-arrow { font-size: 18px; color: var(--light); transition: transform 0.3s; margin-left: auto; }
 .period-card.open .period-arrow { transform: rotate(180deg); }
-.period-body { padding: 0 24px 24px; display: none; }
-.period-card.open .period-body { display: block; animation: fadeIn 0.3s ease; }
-
-.period-summary {
-  font-size: 15px; line-height: 1.7; color: var(--dark-soft);
-  padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px;
-  border-left: 3px solid currentColor;
-}
-
-.period-section-label {
-  font-size: 12px; font-weight: 600; color: var(--light);
-  text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 8px;
-}
-.period-items { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
-.period-item {
-  font-size: 13px; color: var(--mid);
-  padding: 8px 12px; background: var(--warm-gray); border-radius: 6px;
-}
-.period-item.warning { color: var(--red); background: #FFEBEE; }
-.period-item.warning::before { content: '⚠ '; }
-
-.inflection-box {
-  padding: 14px 16px; border-radius: 8px;
-  background: rgba(232,98,74,0.05); border: 1px dashed rgba(232,98,74,0.25);
-}
-.inflection-box .tag {
-  font-size: 11px; font-weight: 600; color: var(--coral);
-  text-transform: uppercase; letter-spacing: 0.06em;
-}
-.inflection-box p { font-size: 14px; color: var(--dark-soft); margin-top: 6px; line-height: 1.6; }
-
-.sentiment-box {
-  padding: 14px 16px; background: #FFF8E1; border-radius: 8px; margin-top: 16px;
-}
-.sentiment-box .tag {
-  font-size: 11px; font-weight: 600; color: #F57F17;
-  text-transform: uppercase; letter-spacing: 0.06em;
-}
-.sentiment-box p { font-size: 14px; color: var(--dark-soft); margin-top: 6px; line-height: 1.6; }
+.period-body { padding: 0 24px 24px; animation: fadeIn 0.3s ease; display: none; }
+.period-card.open .period-body { display: block; }
+.period-summary { font-size: 15px; line-height: 1.7; color: var(--dark-soft); padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px; }
+.sub-heading { font-size: 12px; font-weight: 600; color: var(--light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.period-text { font-size: 14px; line-height: 1.7; color: var(--mid); margin-bottom: 20px; }
+.item-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+.item-pill { font-size: 13px; color: var(--mid); padding: 8px 12px; background: var(--warm-gray); border-radius: 6px; }
+.item-pill.danger { color: var(--red); background: #FFEBEE; }
+.inflection-box { padding: 14px 16px; background: rgba(232,98,74,0.05); border-radius: 8px; border: 1px dashed rgba(232,98,74,0.25); }
+.inflection-label { font-size: 11px; font-weight: 600; color: var(--coral); text-transform: uppercase; letter-spacing: 0.06em; }
+.inflection-text { font-size: 14px; color: var(--dark-soft); margin-top: 6px; line-height: 1.6; }
+.sentiment-box { padding: 14px 16px; background: #FFF8E1; border-radius: 8px; margin-top: 16px; }
+.sentiment-label { font-size: 11px; font-weight: 600; color: #F57F17; text-transform: uppercase; letter-spacing: 0.06em; }
+.sentiment-text { font-size: 14px; color: var(--dark-soft); margin-top: 6px; line-height: 1.6; }
 
 /* Timeline */
-.timeline-wrap { position: relative; padding-left: 0; }
-.timeline-line {
-  position: absolute; left: 76px; top: 8px; bottom: 8px; width: 2px;
-  background: linear-gradient(to bottom, #27AE60, #E67E22, #C0392B); border-radius: 1px;
-}
-.tl-row {
-  display: flex; align-items: center; gap: 16px;
-  padding: 8px 0; transition: opacity 0.2s; cursor: default;
-}
-.tl-row:hover { opacity: 1 !important; }
-.tl-row:hover ~ .tl-row, .timeline-wrap:hover .tl-row { opacity: 0.4; }
-.timeline-wrap:hover .tl-row:hover { opacity: 1; }
-.tl-date {
-  font-size: 11px; color: var(--light); width: 64px;
-  text-align: right; flex-shrink: 0;
-}
-.tl-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  border: 2px solid var(--white); flex-shrink: 0; z-index: 1;
-}
-.tl-content { flex: 1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.tl-tag {
-  font-size: 10px; font-weight: 600; padding: 2px 8px;
-  border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em;
-}
-.tl-event { font-size: 13px; color: var(--dark-soft); }
+.timeline-container { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 24px; overflow-x: auto; }
+.timeline-row { display: flex; align-items: center; gap: 16px; padding: 8px 0; transition: opacity 0.2s; cursor: default; position: relative; }
+.timeline-row.faded { opacity: 0.4; }
+.timeline-date { font-size: 11px; color: var(--light); width: 64px; text-align: right; flex-shrink: 0; }
+.timeline-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--white); flex-shrink: 0; z-index: 1; }
+.timeline-content { flex: 1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.timeline-type { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.timeline-event { font-size: 13px; color: var(--dark-soft); }
+.timeline-line { position: absolute; left: 76px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #27AE60, #E67E22, #C0392B); border-radius: 1px; z-index: 0; pointer-events: none; }
 
 /* Poster Children */
-.filter-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-.filter-btn {
-  padding: 6px 14px; border-radius: 20px;
-  border: 1px solid var(--border); background: transparent;
-  color: var(--mid); font-size: 12px; font-weight: 500;
-  cursor: pointer; transition: all 0.2s;
-}
-.filter-btn.active { border-color: var(--coral); background: rgba(232,98,74,0.07); color: var(--coral); }
-
-.poster-card {
-  padding: 18px 20px; animation: fadeIn 0.3s ease;
-}
-.poster-card[hidden] { display: none; }
-.poster-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
-.poster-name { font-size: 16px; font-weight: 600; color: var(--dark); }
+.disclaimer { padding: 12px 16px; background: var(--warm-gray); border-radius: 8px; border-left: 3px solid var(--border); margin-bottom: 20px; }
+.disclaimer p { font-size: 13px; color: var(--mid); line-height: 1.6; font-style: italic; }
+.filter-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+.filter-label { font-size: 11px; font-weight: 600; color: var(--light); text-transform: uppercase; letter-spacing: 0.06em; margin-right: 4px; }
+.filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--mid); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.filter-btn.active-all { border-color: var(--coral); background: rgba(232,98,74,0.07); color: var(--coral); }
+.poster-card { background: var(--white); border-radius: 10px; border: 1px solid var(--border); padding: 18px 20px; margin-bottom: 10px; animation: fadeIn 0.3s ease; }
+.poster-card.hidden { display: none; }
+.poster-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.poster-person { font-family: 'Playfair Display', Georgia, serif; font-size: 16px; font-weight: 600; color: var(--dark); }
 .poster-claim { font-size: 13px; color: var(--light); margin-left: 10px; }
-.verdict-badge {
-  font-size: 11px; font-weight: 600; padding: 3px 10px;
-  border-radius: 4px; white-space: nowrap; border: 1px solid;
-}
-.poster-reality { font-size: 13px; color: var(--mid); margin-top: 10px; line-height: 1.6; }
+.poster-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 4px; white-space: nowrap; }
+.poster-reality { font-size: 13px; color: var(--mid); line-height: 1.6; }
 
-/* Ecosystem Table */
-.eco-header, .eco-row {
-  display: grid;
-  grid-template-columns: minmax(120px, 1.2fr) minmax(90px, 1fr) 2fr 72px 72px;
-  gap: 12px; align-items: center; padding: 10px 20px;
-}
-.eco-header span {
-  font-size: 10px; font-weight: 600; color: var(--light);
-  text-transform: uppercase; letter-spacing: 0.08em;
-}
-.eco-row {
-  background: var(--white); border: 1px solid var(--border); padding: 16px 20px;
-}
+/* Ecosystem */
+.eco-intro { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+.eco-header-row { padding: 10px 20px; display: grid; grid-template-columns: minmax(120px, 1.2fr) minmax(90px, 1fr) 2fr 72px 72px; gap: 12px; align-items: center; }
+.eco-col-label { font-size: 10px; font-weight: 600; color: var(--light); text-transform: uppercase; letter-spacing: 0.08em; }
+.eco-col-label.center { text-align: center; }
+.eco-row { background: var(--white); border: 1px solid var(--border); padding: 16px 20px; display: grid; grid-template-columns: minmax(120px, 1.2fr) minmax(90px, 1fr) 2fr 72px 72px; gap: 12px; align-items: center; margin-bottom: 2px; }
 .eco-row:first-of-type { border-radius: 10px 10px 2px 2px; }
 .eco-row:last-of-type { border-radius: 2px 2px 10px 10px; }
-.eco-row + .eco-row { margin-top: 2px; }
 .eco-layer { font-size: 13px; font-weight: 600; color: var(--dark); }
 .eco-model { font-size: 12px; color: var(--light); }
 .eco-examples { font-size: 12px; color: var(--mid); }
-.eco-dep, .eco-rev { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-align: center; }
+.eco-dep { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-align: center; }
+.eco-rev { font-size: 13px; font-weight: 700; letter-spacing: 0.02em; text-align: center; }
 
 /* Signal vs Noise */
-.signal-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;
-}
-.signal-list-item {
-  font-size: 13px; color: var(--dark-soft); line-height: 1.6;
-  padding: 10px 0; border-bottom: 1px solid var(--border);
-}
-.signal-list-item:last-child { border-bottom: none; }
-.signal-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+.signal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.signal-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 24px; }
+.signal-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.signal-dot { width: 8px; height: 8px; border-radius: 50%; }
+.signal-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.signal-item { font-size: 13px; color: var(--dark-soft); line-height: 1.6; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.signal-item:last-child { border-bottom: none; }
 
 /* Predictions */
-.prediction-card { padding: 24px; }
-.prediction-card + .prediction-card { margin-top: 16px; }
+.prediction-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 24px; margin-bottom: 16px; animation: fadeIn 0.3s ease; }
 .prediction-inner { display: flex; gap: 16px; }
-.prediction-num {
-  font-size: 36px; font-weight: 700; color: rgba(232,98,74,0.19);
-  line-height: 1; flex-shrink: 0;
-}
-.prediction-title {
-  font-size: 18px; font-weight: 600; color: var(--dark);
-  margin-bottom: 10px; line-height: 1.3;
-}
-.prediction-body { font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
-.prediction-watch {
-  font-size: 13px; font-weight: 500; color: var(--coral);
-  font-style: italic; margin-bottom: 14px;
-}
-.prediction-plain {
-  padding: 14px 16px; background: var(--warm-gray); border-radius: 8px;
-  border-left: 3px solid var(--border); font-size: 13px;
-  color: var(--dark-soft); line-height: 1.7;
-}
+.prediction-num { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; color: rgba(232,98,74,0.19); line-height: 1; flex-shrink: 0; }
+.prediction-title { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 10px; line-height: 1.3; }
+.prediction-body { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 12px; }
+.prediction-watch { font-size: 13px; font-weight: 500; color: var(--coral); font-style: italic; margin-bottom: 14px; }
+.prediction-plain { padding: 14px 16px; background: var(--warm-gray); border-radius: 8px; border-left: 3px solid var(--border); font-size: 13px; color: var(--dark-soft); line-height: 1.7; }
 
-/* CTA */
-.cta-section {
-  margin-top: 48px; padding: 40px 24px; text-align: center;
-}
-.cta-section h3 {
-  font-size: 22px; font-weight: 700; color: var(--dark);
-  margin-bottom: 12px; line-height: 1.3;
-}
-.cta-section p { font-size: 14px; margin-bottom: 24px; line-height: 1.6; }
-.cta-btn {
-  display: inline-block; padding: 14px 32px;
-  background: var(--coral); color: var(--white);
-  font-size: 15px; font-weight: 600; border-radius: 40px;
-  text-decoration: none; transition: all 0.2s;
-  box-shadow: 0 4px 16px rgba(232,98,74,0.25);
-}
-.cta-btn:hover {
-  background: #D4553E; box-shadow: 0 6px 20px rgba(232,98,74,0.35);
-}
+/* Footer CTA */
+.cta-card { margin-top: 48px; padding: 40px 24px; background: var(--white); border-radius: 12px; border: 1px solid var(--border); text-align: center; }
+.cta-title { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 12px; line-height: 1.3; }
+.cta-sub { font-size: 14px; color: var(--mid); margin-bottom: 24px; line-height: 1.6; }
+.cta-btn { display: inline-block; padding: 14px 32px; background: var(--coral); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; border-radius: 40px; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 16px rgba(232,98,74,0.25); }
+.cta-btn:hover { background: #D4553E; box-shadow: 0 6px 20px rgba(232,98,74,0.35); }
+.sources { margin-top: 24px; padding: 16px 0; text-align: center; font-size: 12px; color: var(--light); }
 
-.sources { text-align: center; margin-top: 24px; padding: 16px 0; }
-.sources p { font-size: 12px; color: var(--light); }
+/* ── Mobile hamburger nav ── */
+.nav-toggle { display: none; background: none; border: none; padding: 12px 0; cursor: pointer; font-family: 'DM Sans', sans-serif; width: 100%; }
+.nav-toggle-inner { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 10px 16px; }
+.nav-toggle-label { font-size: 14px; font-weight: 600; color: var(--dark); display: flex; align-items: center; gap: 8px; }
+.nav-toggle-label::before { content: "☰"; font-size: 16px; color: var(--coral); }
+.nav-toggle.open .nav-toggle-label::before { content: "✕"; }
+.nav-toggle-section { font-size: 11px; color: var(--coral); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.nav-toggle-arrow { transition: transform 0.3s; font-size: 12px; color: var(--light); }
+.nav-toggle.open .nav-toggle-arrow { transform: rotate(180deg); }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .eco-header, .eco-row {
-    grid-template-columns: 1fr;
-    gap: 4px;
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  /* Nav collapse */
+  .nav { padding: 0 20px; }
+  .nav-toggle { display: block; }
+  .nav-inner { display: none; flex-direction: column; gap: 0; background: var(--white); border: 1px solid var(--border); border-radius: 8px; margin-top: 4px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(44,62,80,0.08); }
+  .nav-inner.open { display: flex; }
+  .nav button { text-align: left; padding: 12px 16px; font-size: 14px; border-bottom: none; border-left: 3px solid transparent; }
+  .nav button:not(:last-child) { border-bottom: 1px solid var(--border) !important; }
+  .nav button.active { border-left-color: var(--coral); background: var(--coral-bg); border-bottom: 1px solid var(--border) !important; }
+
+  /* Header */
+  .header { padding: 32px 20px 28px; }
+  .header-tag { font-size: 11px; margin-bottom: 16px; }
+  .header .meta { gap: 4px 10px; font-size: 11px; }
+
+  /* Main */
+  main { padding: 28px 20px 60px; }
+  section { margin-bottom: 48px; }
+
+  /* Section titles */
+  .section-title h2 { font-size: 22px; }
+  .section-title { margin-bottom: 24px; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-card { padding: 16px 12px; }
+  .stat-value { font-size: 26px; }
+  .stat-label { font-size: 11px; }
+
+  /* Period cards */
+  .period-header { padding: 16px 18px; gap: 12px; }
+  .period-icon { width: 36px; height: 36px; font-size: 14px; }
+  .period-label { font-size: 16px; }
+  .period-body { padding: 0 18px 18px; }
+  .period-summary { padding: 12px 16px; font-size: 14px; }
+  .period-text { font-size: 13px; }
+
+  /* Timeline */
+  .timeline-container { padding: 16px; }
+  .timeline-date { width: 52px; font-size: 10px; }
+  .timeline-line { left: 64px; }
+  .timeline-event { font-size: 12px; }
+  .timeline-type { font-size: 9px; padding: 2px 6px; }
+
+  /* Poster children */
+  .poster-card { padding: 14px 16px; }
+  .poster-top { flex-direction: column; gap: 6px; }
+  .poster-person { font-size: 15px; }
+  .poster-claim { margin-left: 0; display: block; margin-top: 2px; }
+  .poster-badge { align-self: flex-start; }
+  .poster-reality { font-size: 13px; }
+
+  /* Ecosystem — stack on mobile */
+  .eco-header-row { display: none; }
+  .eco-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    border-radius: 10px !important;
   }
-  .eco-header { display: none; }
-  .eco-row { padding: 14px 16px; }
+  .eco-row::before { content: none; }
+  .eco-layer { font-size: 14px; }
+  .eco-model { font-size: 12px; }
+  .eco-examples { font-size: 12px; }
   .eco-dep, .eco-rev { text-align: left; }
-  .prediction-inner { flex-direction: column; }
-  .prediction-num { font-size: 28px; }
+  .eco-dep::before { content: "AI Dependency: "; font-weight: 400; color: var(--light); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .eco-rev::before { content: "Revenue Scale: "; font-weight: 400; color: var(--light); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* Signal vs Noise */
   .signal-grid { grid-template-columns: 1fr; }
+  .signal-card { padding: 18px; }
+
+  /* Predictions */
+  .prediction-card { padding: 18px; }
+  .prediction-inner { gap: 12px; }
+  .prediction-num { font-size: 28px; }
+  .prediction-title { font-size: 16px; }
+  .prediction-body { font-size: 13px; }
+  .prediction-plain { padding: 12px 14px; font-size: 12px; }
+
+  /* CTA */
+  .cta-card { padding: 28px 20px; margin-top: 36px; }
+  .cta-title { font-size: 19px; }
+  .cta-btn { padding: 12px 28px; font-size: 14px; }
+
+  /* Filter pills scroll */
+  .filter-row { gap: 6px; }
+  .filter-btn { font-size: 11px; padding: 5px 10px; }
+  .filter-label { font-size: 10px; width: 100%; margin-bottom: 2px; }
+}
+
+@media (max-width: 380px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .stat-value { font-size: 22px; }
+  .header h1 { font-size: 24px; }
+  .header .subtitle { font-size: 16px; }
+  .prediction-inner { flex-direction: column; gap: 4px; }
+  .timeline-date { width: 44px; font-size: 9px; }
+  .timeline-line { left: 56px; }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <!-- Header -->
-  <header class="header">
-    <span class="badge sans">TrendLoom Signal Analysis</span>
-    <h1 class="serif">The "Solo Founder + AI" Narrative</h1>
-    <p class="subtitle serif">Genesis → Acceleration → Reckoning</p>
-    <div class="meta sans">
-      <span>111 claims analyzed</span>
-      <span>32 revenue claims</span>
-      <span>8 verified</span>
-      <span>7 inflated</span>
-    </div>
-    <div class="meta sans" style="margin-top:6px">Prepared: February 1, 2026 · Elena Tsemirava, TrendLoom</div>
-  </header>
-</div>
+<!-- Header -->
+<header class="header">
+  <span class="header-tag">TrendLoom Signal Analysis</span>
+  <h1>The "Solo Founder + AI" Narrative</h1>
+  <p class="subtitle">Genesis → Acceleration → Reckoning</p>
+  <div class="meta">
+    <span>111 claims analyzed</span><span>·</span>
+    <span>32 revenue claims</span><span>·</span>
+    <span>8 verified</span><span>·</span>
+    <span>7 inflated</span>
+  </div>
+  <div class="byline">Prepared: February 1, 2026 · Elena Tsemirava, TrendLoom</div>
+</header>
 
 <!-- Nav -->
-<nav>
-  <div class="nav-inner sans">
-    <a href="#overview" class="active">Overview</a>
-    <a href="#periods">Three Periods</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#poster">Poster Children</a>
-    <a href="#ecosystem">Ecosystem</a>
-    <a href="#signal">Signal vs Noise</a>
-    <a href="#predictions">Predictions</a>
+<nav class="nav" id="mainNav">
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()">
+    <span class="nav-toggle-inner">
+      <span class="nav-toggle-label"><span id="navToggleLabel">Navigate sections</span></span>
+      <span>
+        <span class="nav-toggle-section" id="navToggleSection">Overview</span>
+        <span class="nav-toggle-arrow" id="navArrow">▾</span>
+      </span>
+    </span>
+  </button>
+  <div class="nav-inner" id="navInner">
+    <button class="active" data-target="overview">Overview</button>
+    <button data-target="periods">Three Periods</button>
+    <button data-target="timeline">Timeline</button>
+    <button data-target="poster">Poster Children</button>
+    <button data-target="ecosystem">Ecosystem</button>
+    <button data-target="signal">Signal vs Noise</button>
+    <button data-target="predictions">Predictions</button>
   </div>
 </nav>
 
-<div class="container" style="padding-top:40px; padding-bottom:80px;">
+<main>
 
-  <!-- Overview -->
-  <section id="overview">
-    <div class="section-title">
-      <h2 class="serif">Executive Summary</h2>
-      <p class="sub sans">Cross-referencing 111 claims with independent verification</p>
-      <div class="bar"></div>
-    </div>
+<!-- Overview -->
+<section id="overview">
+  <div class="section-title">
+    <h2>Executive Summary</h2>
+    <p class="sub">Cross-referencing 111 claims with independent verification</p>
+    <div class="bar"></div>
+  </div>
+  <div class="card verdict-box">
+    <div class="verdict-label">Verdict</div>
+    <p class="verdict-title">The narrative is bifurcating, not maturing.</p>
+    <p class="verdict-body">The "solo founder + AI" narrative has split into two parallel tracks: an intensifying hype layer (prediction pundits, course sellers, and content recyclers pushing "one-person unicorn by 2026") and an emerging evidence layer (security researchers, burned-out founders, and code auditors documenting the real ceiling). These tracks are barely talking to each other.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-value" data-target="111"></div><div class="stat-label">Claims Analyzed</div></div>
+    <div class="stat-card"><div class="stat-value" data-target="25" data-suffix="%"></div><div class="stat-label">Revenue Claims Verified</div></div>
+    <div class="stat-card"><div class="stat-value" data-target="50" data-suffix="%"></div><div class="stat-label">Top Cases Had Hidden Teams</div></div>
+    <div class="stat-card"><div class="stat-value" data-target="33" data-suffix="%"></div><div class="stat-label">Dev Trust in AI Code</div></div>
+  </div>
+</section>
 
-    <div class="card verdict-box">
-      <div class="tag sans">Verdict</div>
-      <h3 class="serif">The narrative is bifurcating, not maturing.</h3>
-      <p class="sans">The "solo founder + AI" narrative has split into two parallel tracks: an intensifying hype layer (prediction pundits, course sellers, and content recyclers pushing "one-person unicorn by 2026") and an emerging evidence layer (security researchers, burned-out founders, and code auditors documenting the real ceiling). These tracks are barely talking to each other.</p>
-    </div>
-
-    <div class="stats-grid">
-      <div class="card stat-card">
-        <div class="value serif">111</div>
-        <div class="label sans">Claims Analyzed</div>
-      </div>
-      <div class="card stat-card">
-        <div class="value serif">25%</div>
-        <div class="label sans">Revenue Claims Verified</div>
-      </div>
-      <div class="card stat-card">
-        <div class="value serif">50%</div>
-        <div class="label sans">Top Cases Had Hidden Teams</div>
-      </div>
-      <div class="card stat-card">
-        <div class="value serif">33%</div>
-        <div class="label sans">Dev Trust in AI Code</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Three Periods -->
-  <section id="periods">
-    <div class="section-title">
-      <h2 class="serif">The Three Periods</h2>
-      <p class="sub sans">How the narrative evolved from grounded to speculative</p>
-      <div class="bar"></div>
-    </div>
-
-    <!-- Period A: Genesis -->
-    <div class="card period-card open" data-period="0">
-      <button class="period-header" onclick="togglePeriod(this)">
-        <div class="period-icon" style="background:rgba(39,174,96,0.09)">
-          <span class="serif" style="color:#27AE60">A</span>
-        </div>
-        <div style="flex:1">
-          <div class="serif"><span class="title">Genesis</span><span class="year sans">2023</span></div>
-          <div class="sub sans">Pre-Mainstream AI Coding Tools</div>
-        </div>
-        <span class="period-arrow">▾</span>
-      </button>
-      <div class="period-body">
-        <div class="period-summary" style="color:#27AE60;background:rgba(39,174,96,0.04);border-left-color:#27AE60">
-          The discourse was grounded in real product stories with modest benchmarks and honest hit rates. Solo founding was a lifestyle choice, not a tech-enabled thesis.
-        </div>
-
-        <p class="period-section-label sans">Discourse</p>
-        <p class="sans" style="font-size:14px;line-height:1.7;margin-bottom:20px">
-          In January 2023, Karpathy tweeted "The hottest new programming language is English" — a philosophical claim, not yet a practical one. The solo founder conversation centered on indie hackers building micro-SaaS: Pieter Levels was the poster child, but his success predated AI (started 2014) and used vanilla PHP/jQuery.
-        </p>
-
-        <p class="period-section-label sans">Tools Available</p>
-        <div class="period-items">
-          <div class="period-item sans">ChatGPT (Nov 2022) and GPT-4 (Mar 2023) — conversational, not integrated into coding workflows</div>
-          <div class="period-item sans">GitHub Copilot (launched 2022) — autocomplete, not agentic</div>
-          <div class="period-item sans">No-code tools: Bubble, Zapier, Notion — pre-AI era platforms</div>
-          <div class="period-item sans">Stable Diffusion for image generation</div>
-        </div>
-
-        <p class="period-section-label sans">Benchmarks</p>
-        <p class="sans" style="font-size:14px;line-height:1.7;margin-bottom:20px">
-          PhotoAI reached $61.8K MRR by July 2023. RemoteOK peaked at $140K/mo in 2021 during the remote work boom.
-        </p>
-
-        <div class="inflection-box">
-          <span class="tag sans">Inflection Point</span>
-          <p class="sans">September 2023: Sam Altman reveals his "one-person unicorn" betting pool with tech CEOs. This is the moment the narrative detaches from evidence.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Period B: Acceleration -->
-    <div class="card period-card" data-period="1">
-      <button class="period-header" onclick="togglePeriod(this)">
-        <div class="period-icon" style="background:rgba(230,126,34,0.09)">
-          <span class="serif" style="color:#E67E22">B</span>
-        </div>
-        <div style="flex:1">
-          <div class="serif"><span class="title">Acceleration</span><span class="year sans">Jan–Sep 2024</span></div>
-          <div class="sub sans">Cursor, GPT-4, Claude Artifacts</div>
-        </div>
-        <span class="period-arrow">▾</span>
-      </button>
-      <div class="period-body">
-        <div class="period-summary" style="color:#E67E22;background:rgba(230,126,34,0.04);border-left-color:#E67E22">
-          The narrative went mainstream. Fortune and Forbes ran cover stories. Claim specificity cratered as the same 4–5 examples got recycled across 20+ articles.
-        </div>
-
-        <p class="period-section-label sans">Discourse</p>
-        <p class="sans" style="font-size:14px;line-height:1.7;margin-bottom:20px">
-          Fortune ran "One-person unicorn" as a cover story in January 2024. The discourse shifted from practitioner stories to prediction punditry. New actors entered: VC thought-leaders, Forbes columnists, LinkedIn influencers.
-        </p>
-
-        <p class="period-section-label sans">Key Claims</p>
-        <div class="period-items">
-          <div class="period-item sans">Base44 acquired by Wix for $80M — framed as "solo founder exit" (actually had 8 employees)</div>
-          <div class="period-item sans">Danny Postma's HeadshotPro hit $300K/mo — then burned out, hired team</div>
-          <div class="period-item sans">Justin Welsh's $4.15M framed as "AI solopreneur" — actually courses about solopreneurship</div>
-          <div class="period-item sans">"My AI Co-Founder" Substack launched June 2024</div>
-        </div>
-
-        <div class="inflection-box">
-          <span class="tag sans">Platform Shift</span>
-          <p class="sans">The conversation migrated from Indie Hackers and r/SaaS (practitioners) to LinkedIn, Forbes, and Medium (amplifiers). Medium/blog sources had the lowest reliability (avg specificity: 2.2/5) while Indie Hackers had the highest (4.1/5).</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Period C: Reckoning -->
-    <div class="card period-card" data-period="2">
-      <button class="period-header" onclick="togglePeriod(this)">
-        <div class="period-icon" style="background:rgba(192,57,43,0.09)">
-          <span class="serif" style="color:#C0392B">C</span>
-        </div>
-        <div style="flex:1">
-          <div class="serif"><span class="title">Reckoning</span><span class="year sans">Oct 2024–Jan 2026</span></div>
-          <div class="sub sans">Claude Code, Cursor Mainstream, Vibe Coding</div>
-        </div>
-        <span class="period-arrow">▾</span>
-      </button>
-      <div class="period-body">
-        <div class="period-summary" style="color:#C0392B;background:rgba(192,57,43,0.04);border-left-color:#C0392B">
-          Peak hype collides with hard evidence. The counter-narrative emerges but hasn't yet displaced the hype cycle.
-        </div>
-
-        <p class="period-section-label sans">Discourse</p>
-        <p class="sans" style="font-size:14px;line-height:1.7;margin-bottom:20px">
-          February 2025: Karpathy coined "vibe coding" — 4.5M+ views. Named Collins Dictionary Word of the Year 2025. YC W2025 batch: 25% of startups had 95% AI-generated codebases.
-        </p>
-
-        <p class="period-section-label sans">Hard Evidence Emerging</p>
-        <div class="period-items">
-          <div class="period-item warning sans">Lovable: 170/1,645 apps leaked personal data</div>
-          <div class="period-item warning sans">Builder.ai filed bankruptcy ($445M funding evaporated)</div>
-          <div class="period-item warning sans">Replit agent deleted a production database</div>
-          <div class="period-item warning sans">Fast Company: "The vibe coding hangover is upon us"</div>
-        </div>
-
-        <div class="sentiment-box">
-          <span class="tag sans">Sentiment Shift</span>
-          <p class="sans">Stack Overflow 2025 survey: positive sentiment toward AI tools dropped to 60% (from 70%+ in 2023–24). Only 33% trust AI code accuracy, while 46% actively distrust it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline -->
-  <section id="timeline">
-    <div class="section-title">
-      <h2 class="serif">Timeline of Inflection Points</h2>
-      <p class="sub sans">16 key events from Jan 2023 to Jan 2026</p>
-      <div class="bar"></div>
-    </div>
-
-    <div class="card" style="overflow-x:auto">
-      <div class="timeline-wrap">
-        <div class="timeline-line"></div>
-
-        <div class="tl-row"><span class="tl-date sans">Jan 2023</span><div class="tl-dot" style="background:#27AE60;box-shadow:0 0 0 2px rgba(39,174,96,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:#27AE60;background:rgba(39,174,96,0.09)">Inflection</span><span class="tl-event sans">Karpathy: "The hottest new programming language is English"</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Feb 2023</span><div class="tl-dot" style="background:#27AE60;box-shadow:0 0 0 2px rgba(39,174,96,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--mid);background:var(--warm-gray)">Milestone</span><span class="tl-event sans">Pieter Levels launches PhotoAI</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Mar 2023</span><div class="tl-dot" style="background:#27AE60;box-shadow:0 0 0 2px rgba(39,174,96,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:#27AE60;background:rgba(39,174,96,0.09)">Inflection</span><span class="tl-event sans">GPT-4 released</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Jul 2023</span><div class="tl-dot" style="background:#27AE60;box-shadow:0 0 0 2px rgba(39,174,96,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--mid);background:var(--warm-gray)">Milestone</span><span class="tl-event sans">PhotoAI hits $61.8K MRR</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Sep 2023</span><div class="tl-dot" style="background:#27AE60;box-shadow:0 0 0 2px rgba(39,174,96,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:#27AE60;background:rgba(39,174,96,0.09)">Inflection</span><span class="tl-event sans">Sam Altman reveals one-person unicorn betting pool</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Jan 2024</span><div class="tl-dot" style="background:#E67E22;box-shadow:0 0 0 2px rgba(230,126,34,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--coral);background:rgba(232,98,74,0.09)">Narrative</span><span class="tl-event sans">Fortune runs "One-person unicorn" cover story</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Mar 2024</span><div class="tl-dot" style="background:#E67E22;box-shadow:0 0 0 2px rgba(230,126,34,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:#E67E22;background:rgba(230,126,34,0.09)">Inflection</span><span class="tl-event sans">Cursor gains mass adoption</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Aug 2024</span><div class="tl-dot" style="background:#E67E22;box-shadow:0 0 0 2px rgba(230,126,34,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--mid);background:var(--warm-gray)">Milestone</span><span class="tl-event sans">Levels passes $100K/mo</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Sep 2024</span><div class="tl-dot" style="background:#E67E22;box-shadow:0 0 0 2px rgba(230,126,34,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--mid);background:var(--warm-gray)">Milestone</span><span class="tl-event sans">Base44 acquired by Wix for $80M (8 employees)</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Feb 2025</span><div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px rgba(192,57,43,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:#C0392B;background:rgba(192,57,43,0.09)">Inflection</span><span class="tl-event sans">Karpathy coins "vibe coding" — 4.5M+ views</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Mar 2025</span><div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px rgba(192,57,43,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--mid);background:var(--warm-gray)">Milestone</span><span class="tl-event sans">YC W2025: 25% of startups have 95% AI-generated code</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">May 2025</span><div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px rgba(192,57,43,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:#C0392B;background:rgba(192,57,43,0.09)">Inflection</span><span class="tl-event sans">Lovable data leak. Amodei: solo unicorn by 2026.</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Jul 2025</span><div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px rgba(192,57,43,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--mid);background:var(--warm-gray)">Milestone</span><span class="tl-event sans">Replit agent deletes prod DB. Builder.ai bankruptcy.</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Sep 2025</span><div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px rgba(192,57,43,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--coral);background:rgba(232,98,74,0.09)">Narrative</span><span class="tl-event sans">"Vibe coding hangover is upon us"</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Nov 2025</span><div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px rgba(192,57,43,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:var(--mid);background:var(--warm-gray)">Milestone</span><span class="tl-event sans">Cursor: $1B ARR (~150 people)</span></div></div>
-
-        <div class="tl-row"><span class="tl-date sans">Jan 2026</span><div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px rgba(192,57,43,0.25)"></div><div class="tl-content"><span class="tl-tag sans" style="color:#C0392B;background:rgba(192,57,43,0.09)">Inflection</span><span class="tl-event sans">Veracode: 45% AI code has security flaws</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Poster Children -->
-  <section id="poster">
-    <div class="section-title">
-      <h2 class="serif">How the "Poster Children" Changed</h2>
-      <p class="sub sans">The narrative's examples evolved from genuine to misrepresented</p>
-      <div class="bar"></div>
-    </div>
-
-    <div class="filter-bar">
-      <button class="filter-btn active sans" onclick="filterPoster(this, 'all')">All (7)</button>
-      <button class="filter-btn sans" onclick="filterPoster(this, 'Real but Misframed')" style="--active-bg:#FFF8E1;--active-text:#F57F17;--active-border:#FFE082">Real but Misframed (1)</button>
-      <button class="filter-btn sans" onclick="filterPoster(this, 'Real but Fragile')" style="--active-bg:#FFF3E0;--active-text:#E65100;--active-border:#FFCC80">Real but Fragile (2)</button>
-      <button class="filter-btn sans" onclick="filterPoster(this, 'Inflated')" style="--active-bg:#FFEBEE;--active-text:#C62828;--active-border:#EF9A9A">Inflated (3)</button>
-      <button class="filter-btn sans" onclick="filterPoster(this, 'Misattributed')" style="--active-bg:#FBE9E7;--active-text:#BF360C;--active-border:#FFAB91">Misattributed (1)</button>
-    </div>
-
-    <div id="poster-list">
-      <div class="card poster-card" data-verdict="Real but Misframed">
-        <div class="poster-top">
-          <div><span class="poster-name serif">Pieter Levels</span><span class="poster-claim sans">$138K MRR solo</span></div>
-          <span class="verdict-badge sans" style="color:#F57F17;background:#FFF8E1;border-color:#FFE082">Real but Misframed</span>
-        </div>
-        <p class="poster-reality sans">Started 2014. 40+ projects, ~5% hit rate. Uses NO AI coding tools.</p>
-      </div>
-
-      <div class="card poster-card" data-verdict="Real but Fragile">
-        <div class="poster-top">
-          <div><span class="poster-name serif">Tony Dinh</span><span class="poster-claim sans">$45K/mo solo</span></div>
-          <span class="verdict-badge sans" style="color:#E65100;background:#FFF3E0;border-color:#FFCC80">Real but Fragile</span>
-        </div>
-        <p class="poster-reality sans">Nearly killed by Twitter API changes. First product abandoned.</p>
-      </div>
-
-      <div class="card poster-card" data-verdict="Inflated">
-        <div class="poster-top">
-          <div><span class="poster-name serif">Base44 / Shlomo</span><span class="poster-claim sans">$80M solo exit</span></div>
-          <span class="verdict-badge sans" style="color:#C62828;background:#FFEBEE;border-color:#EF9A9A">Inflated</span>
-        </div>
-        <p class="poster-reality sans">Had 8 employees at exit. $25M retention bonus for staff.</p>
-      </div>
-
-      <div class="card poster-card" data-verdict="Real but Fragile">
-        <div class="poster-top">
-          <div><span class="poster-name serif">HeadshotPro</span><span class="poster-claim sans">$300K/mo solo</span></div>
-          <span class="verdict-badge sans" style="color:#E65100;background:#FFF3E0;border-color:#FFCC80">Real but Fragile</span>
-        </div>
-        <p class="poster-reality sans">Burned out, took 3-month break. Now has team.</p>
-      </div>
-
-      <div class="card poster-card" data-verdict="Misattributed">
-        <div class="poster-top">
-          <div><span class="poster-name serif">Justin Welsh</span><span class="poster-claim sans">$4.15M "AI solopreneur"</span></div>
-          <span class="verdict-badge sans" style="color:#BF360C;background:#FBE9E7;border-color:#FFAB91">Misattributed</span>
-        </div>
-        <p class="poster-reality sans">Revenue from courses ABOUT solopreneurship. Started 2019.</p>
-      </div>
-
-      <div class="card poster-card" data-verdict="Inflated">
-        <div class="poster-top">
-          <div><span class="poster-name serif">Kleo 2.0</span><span class="poster-claim sans">$62K MRR solo</span></div>
-          <span class="verdict-badge sans" style="color:#C62828;background:#FFEBEE;border-color:#EF9A9A">Inflated</span>
-        </div>
-        <p class="poster-reality sans">THREE co-founders with 480K combined LinkedIn followers.</p>
-      </div>
-
-      <div class="card poster-card" data-verdict="Inflated">
-        <div class="poster-top">
-          <div><span class="poster-name serif">Midjourney</span><span class="poster-claim sans">$200M / 11 staff</span></div>
-          <span class="verdict-badge sans" style="color:#C62828;background:#FFEBEE;border-color:#EF9A9A">Inflated</span>
-        </div>
-        <p class="poster-reality sans">Actually 107–163 employees. Revenue $500M. Lean ≠ solo.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ecosystem -->
-  <section id="ecosystem">
-    <div class="section-title">
-      <h2 class="serif">The Five-Layer Narrative Ecosystem</h2>
-      <p class="sub sans">Each layer feeds and amplifies the one above it</p>
-      <div class="bar"></div>
-    </div>
-
-    <p class="sans" style="font-size:14px;line-height:1.7;margin-bottom:20px">
-      The biggest "AI solopreneur" revenues come from teaching solopreneurship, not from AI products.
-    </p>
-
-    <div class="eco-header">
-      <span>Layer</span><span>Revenue Model</span><span>Examples</span><span style="text-align:center">AI Dep.</span><span style="text-align:center">Revenue</span>
-    </div>
-
-    <div class="eco-row">
-      <span class="eco-layer sans">1. AI Products</span>
-      <span class="eco-model sans">SaaS subscriptions</span>
-      <span class="eco-examples sans">PhotoAI ($138K), HeadshotPro, Magai</span>
-      <span class="eco-dep" style="color:var(--red)">HIGH</span>
-      <span class="eco-rev" style="color:var(--light);font-size:13px">$</span>
-    </div>
-    <div class="eco-row">
-      <span class="eco-layer sans">2. Builder Tools</span>
-      <span class="eco-model sans">Templates / subs</span>
-      <span class="eco-examples sans">ShipFast ($80K/mo), Cursor ($1B ARR)</span>
-      <span class="eco-dep" style="color:var(--amber)">MEDIUM</span>
-      <span class="eco-rev" style="color:#27AE60;font-size:13px">$$$</span>
-    </div>
-    <div class="eco-row">
-      <span class="eco-layer sans">3. Course Sellers</span>
-      <span class="eco-model sans">Courses, cohorts</span>
-      <span class="eco-examples sans">Welsh ($4.15M/yr), Ole ($270K)</span>
-      <span class="eco-dep" style="color:#27AE60">LOW</span>
-      <span class="eco-rev" style="color:var(--coral);font-size:13px">$$$$</span>
-    </div>
-    <div class="eco-row">
-      <span class="eco-layer sans">4. Content Recyclers</span>
-      <span class="eco-model sans">Ads, SEO, lead gen</span>
-      <span class="eco-examples sans">Medium listicles, LinkedIn posts</span>
-      <span class="eco-dep" style="color:var(--light)">NONE</span>
-      <span class="eco-rev" style="color:var(--amber);font-size:13px">$$</span>
-    </div>
-    <div class="eco-row">
-      <span class="eco-layer sans">5. Prediction Pundits</span>
-      <span class="eco-model sans">Speaking, consulting</span>
-      <span class="eco-examples sans">Altman betting pool, Forbes pieces</span>
-      <span class="eco-dep" style="color:var(--light)">NONE</span>
-      <span class="eco-rev" style="color:var(--amber);font-size:13px">$$</span>
-    </div>
-  </section>
-
-  <!-- Signal vs Noise -->
-  <section id="signal">
-    <div class="section-title">
-      <h2 class="serif">Signal vs. Noise</h2>
-      <p class="sub sans">Separating verified findings from inflated claims</p>
-      <div class="bar"></div>
-    </div>
-
-    <div class="signal-grid">
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
-          <span class="signal-dot" style="background:#27AE60"></span>
-          <span class="sans" style="font-size:13px;font-weight:600;color:#27AE60;text-transform:uppercase;letter-spacing:0.06em">What's Real (Signal)</span>
-        </div>
-        <div class="signal-list-item sans">✓ Solo founding is rising structurally: 36.3% of startups in H1 2025 (Carta)</div>
-        <div class="signal-list-item sans">✓ AI genuinely accelerates prototyping — MVPs in weeks, micro-SaaS in weekends</div>
-        <div class="signal-list-item sans">✓ Lean teams can reach massive revenue: Midjourney $500M with 107–163 people</div>
-        <div class="signal-list-item sans">✓ Solo SaaS always worked pre-AI: Readlang (2012) hit €14K/mo</div>
-      </div>
-
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
-          <span class="signal-dot" style="background:var(--red)"></span>
-          <span class="sans" style="font-size:13px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:0.06em">What's Inflated (Noise)</span>
-        </div>
-        <div class="signal-list-item sans">✗ "One-person unicorn is imminent" — zero exist. Only 14.7% of VC cash goes to solo founders.</div>
-        <div class="signal-list-item sans">✗ "Solo" often means "was solo for 6 months" — Base44 had 8 employees at exit.</div>
-        <div class="signal-list-item sans">✗ Lean (10–160 people) gets conflated with solo (1 person) constantly.</div>
-        <div class="signal-list-item sans">✗ Pre-AI successes rebranded as AI-era proof. Same 4–5 examples power ~80% of all evidence.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Predictions -->
-  <section id="predictions">
-    <div class="section-title">
-      <h2 class="serif">Three Predictions for 2026</h2>
-      <p class="sub sans">Based on cross-referencing 111 claims with independent verification</p>
-      <div class="bar"></div>
-    </div>
-
-    <div class="card prediction-card">
-      <div class="prediction-inner">
-        <span class="prediction-num serif">01</span>
-        <div>
-          <h3 class="prediction-title serif">The "6-Month Wall" becomes the dominant counter-narrative</h3>
-          <p class="prediction-body sans">GitClear's 8x code duplication data, Veracode's 45% security flaw rate, and Fast Company's "vibe coding hangover" report are the leading edge. Expect a wave of postmortems from founders who hit the architectural ceiling at 3–6 months.</p>
-          <p class="prediction-watch sans">Watch r/SaaS and r/startups — this is the deflation indicator.</p>
-          <div class="prediction-plain sans">In plain English: Founders who quickly built MVPs with AI are hitting a wall at 3–6 months. AI-generated code scales poorly — it duplicates, breaks, and carries security holes. The prototype works, but a production product doesn't grow out of it without serious refactoring. Expect a wave of public failure stories that shift the narrative from "AI = easy money" to "AI = fast start, fragile foundation."</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card prediction-card">
-      <div class="prediction-inner">
-        <span class="prediction-num serif">02</span>
-        <div>
-          <h3 class="prediction-title serif">"Solo" gets redefined to "lean"</h3>
-          <p class="prediction-body sans">The data shows lean teams (Midjourney: 107–163 → $500M; Cursor: ~150 → $1B ARR) are the actual breakthrough, not solo individuals. The productivity-per-employee story is real and investable. The one-person story is aspirational content marketing.</p>
-          <p class="prediction-watch sans">Expect the narrative to shift from "one-person unicorn" to "10-person decacorn."</p>
-          <div class="prediction-plain sans">In plain English: Nobody has built a billion-dollar company alone. The real story is that small teams of 10–150 people are generating revenue that used to require thousands. That's genuinely new and significant. But pundits keep conflating "lean" (small team) with "solo" (one person) because "one-person unicorn" gets more clicks. The hype will quietly rebrand itself as the evidence catches up.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card prediction-card">
-      <div class="prediction-inner">
-        <span class="prediction-num serif">03</span>
-        <div>
-          <h3 class="prediction-title serif">Course economics will outperform product economics</h3>
-          <p class="prediction-body sans">Welsh ($4.15M from courses) and Ole ($270K from courses) prove that teaching AI solopreneurship is more profitable than doing it. This meta-layer will continue to grow as more founders try, hit the ceiling, and pivot to selling the dream.</p>
-          <p class="prediction-watch sans">The gold rush's real winners sell shovels.</p>
-          <div class="prediction-plain sans">In plain English: The biggest money in the "AI solopreneur" space isn't made by building AI products — it's made by selling courses about building AI products. As more founders try, fail, and pivot, the pool of people teaching "how to be a solo AI founder" will keep growing. It's a gold rush where the real winners sell shovels, not dig for gold.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="card cta-section">
-    <h3 class="serif">Want this level of signal clarity for your market?</h3>
-    <p class="sans">TrendLoom.io detects market shifts 3–6 months early so you can move before your competitors notice.</p>
-    <a href="https://cal.com/trendloom/trendloom-intro-call" target="_blank" rel="noopener noreferrer" class="cta-btn sans">Book a Signal Briefing →</a>
+<!-- Three Periods -->
+<section id="periods">
+  <div class="section-title">
+    <h2>The Three Periods</h2>
+    <p class="sub">How the narrative evolved from grounded to speculative</p>
+    <div class="bar"></div>
   </div>
 
-  <!-- Sources -->
-  <div class="sources">
-    <p class="sans">Sources: Carta, Veracode, GitClear, DORA, Stack Overflow, Fast Company, Fortune, TechCrunch, Indie Hackers, HN, Reddit, X, LinkedIn</p>
+  <!-- Period A -->
+  <div class="period-card open" id="period-0">
+    <button class="period-header" onclick="togglePeriod(0)">
+      <div class="period-icon" style="background:rgba(39,174,96,0.09)"><span style="color:#27AE60">A</span></div>
+      <div style="flex:1"><div><span class="period-label">Genesis</span><span class="period-year">2023</span></div><div class="period-sub">Pre-Mainstream AI Coding Tools</div></div>
+      <span class="period-arrow">▾</span>
+    </button>
+    <div class="period-body">
+      <p class="period-summary" style="background:rgba(39,174,96,0.04);border-left:3px solid #27AE60">The discourse was grounded in real product stories with modest benchmarks and honest hit rates. Solo founding was a lifestyle choice, not a tech-enabled thesis.</p>
+      <div class="sub-heading">Discourse</div>
+      <p class="period-text">In January 2023, Karpathy tweeted "The hottest new programming language is English" — a philosophical claim, not yet a practical one. The solo founder conversation centered on indie hackers building micro-SaaS: Pieter Levels was the poster child, but his success predated AI (started 2014) and used vanilla PHP/jQuery.</p>
+      <div class="sub-heading">Tools Available</div>
+      <div class="item-list">
+        <div class="item-pill">ChatGPT (Nov 2022) and GPT-4 (Mar 2023) — conversational, not integrated into coding workflows</div>
+        <div class="item-pill">GitHub Copilot (launched 2022) — autocomplete, not agentic</div>
+        <div class="item-pill">No-code tools: Bubble, Zapier, Notion — pre-AI era platforms</div>
+        <div class="item-pill">Stable Diffusion for image generation</div>
+      </div>
+      <div class="inflection-box">
+        <div class="inflection-label">Inflection Point</div>
+        <p class="inflection-text">September 2023: Sam Altman reveals his "one-person unicorn" betting pool with tech CEOs. This is the moment the narrative detaches from evidence.</p>
+      </div>
+    </div>
   </div>
 
+  <!-- Period B -->
+  <div class="period-card" id="period-1">
+    <button class="period-header" onclick="togglePeriod(1)">
+      <div class="period-icon" style="background:rgba(230,126,34,0.09)"><span style="color:#E67E22">B</span></div>
+      <div style="flex:1"><div><span class="period-label">Acceleration</span><span class="period-year">Jan–Sep 2024</span></div><div class="period-sub">Cursor, GPT-4, Claude Artifacts</div></div>
+      <span class="period-arrow">▾</span>
+    </button>
+    <div class="period-body">
+      <p class="period-summary" style="background:rgba(230,126,34,0.04);border-left:3px solid #E67E22">The narrative went mainstream. Fortune and Forbes ran cover stories. Claim specificity cratered as the same 4–5 examples got recycled across 20+ articles.</p>
+      <div class="sub-heading">Discourse</div>
+      <p class="period-text">Fortune ran "One-person unicorn" as a cover story in January 2024. The discourse shifted from practitioner stories to prediction punditry. New actors entered: VC thought-leaders, Forbes columnists, LinkedIn influencers.</p>
+      <div class="sub-heading">Key Claims</div>
+      <div class="item-list">
+        <div class="item-pill">Base44 acquired by Wix for $80M — framed as "solo founder exit" (actually had 8 employees)</div>
+        <div class="item-pill">Danny Postma's HeadshotPro hit $300K/mo — then burned out, hired team</div>
+        <div class="item-pill">Justin Welsh's $4.15M framed as "AI solopreneur" — actually courses about solopreneurship</div>
+        <div class="item-pill">"My AI Co-Founder" Substack launched June 2024</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Period C -->
+  <div class="period-card" id="period-2">
+    <button class="period-header" onclick="togglePeriod(2)">
+      <div class="period-icon" style="background:rgba(192,57,43,0.09)"><span style="color:#C0392B">C</span></div>
+      <div style="flex:1"><div><span class="period-label">Reckoning</span><span class="period-year">Oct 2024–Jan 2026</span></div><div class="period-sub">Claude Code, Cursor Mainstream, Vibe Coding</div></div>
+      <span class="period-arrow">▾</span>
+    </button>
+    <div class="period-body">
+      <p class="period-summary" style="background:rgba(192,57,43,0.04);border-left:3px solid #C0392B">Peak hype collides with hard evidence. The counter-narrative emerges but hasn't yet displaced the hype cycle.</p>
+      <div class="sub-heading">Discourse</div>
+      <p class="period-text">February 2025: Karpathy coined "vibe coding" — 4.5M+ views. Named Collins Dictionary Word of the Year 2025. YC W2025 batch: 25% of startups had 95% AI-generated codebases.</p>
+      <div class="sub-heading">Hard Evidence Emerging</div>
+      <div class="item-list">
+        <div class="item-pill danger">⚠ Lovable: 170/1,645 apps leaked personal data</div>
+        <div class="item-pill danger">⚠ Builder.ai filed bankruptcy ($445M funding evaporated)</div>
+        <div class="item-pill danger">⚠ Replit agent deleted a production database</div>
+        <div class="item-pill danger">⚠ Fast Company: "The vibe coding hangover is upon us"</div>
+      </div>
+      <div class="sentiment-box">
+        <div class="sentiment-label">Sentiment Shift</div>
+        <p class="sentiment-text">Stack Overflow 2025 survey: positive sentiment toward AI tools dropped to 60% (from 70%+ in 2023–24). Only 33% trust AI code accuracy, while 46% actively distrust it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section id="timeline">
+  <div class="section-title">
+    <h2>Timeline of Inflection Points</h2>
+    <p class="sub">16 key events from Jan 2023 to Jan 2026</p>
+    <div class="bar"></div>
+  </div>
+  <div class="timeline-container" id="timelineContainer"></div>
+</section>
+
+<!-- Poster Children -->
+<section id="poster">
+  <div class="section-title">
+    <h2>How the "Poster Children" Changed</h2>
+    <p class="sub">How media and communities reframed these stories over time</p>
+    <div class="bar"></div>
+  </div>
+  <div class="disclaimer"><p>Note: Narrative framing labels reflect how media and communities positioned these stories — not the founders' own claims. The distortion originates in the ecosystem, not the individuals.</p></div>
+  <div class="filter-row" id="filterRow">
+    <span class="filter-label">Narrative Framing:</span>
+  </div>
+  <div id="posterList"></div>
+</section>
+
+<!-- Ecosystem -->
+<section id="ecosystem">
+  <div class="section-title">
+    <h2>The Five-Layer Narrative Ecosystem</h2>
+    <p class="sub">Each layer feeds and amplifies the one above it</p>
+    <div class="bar"></div>
+  </div>
+  <p class="eco-intro">The biggest "AI solopreneur" revenues come from teaching solopreneurship, not from AI products.</p>
+  <div class="eco-header-row">
+    <span class="eco-col-label">Layer</span>
+    <span class="eco-col-label">Revenue Model</span>
+    <span class="eco-col-label">Examples</span>
+    <span class="eco-col-label center">AI Dependency</span>
+    <span class="eco-col-label center">Revenue</span>
+  </div>
+  <div id="ecoRows"></div>
+</section>
+
+<!-- Signal vs Noise -->
+<section id="signal">
+  <div class="section-title">
+    <h2>Signal vs. Noise</h2>
+    <p class="sub">Separating verified findings from inflated claims</p>
+    <div class="bar"></div>
+  </div>
+  <div class="signal-grid">
+    <div class="signal-card">
+      <div class="signal-header"><div class="signal-dot" style="background:#27AE60"></div><span class="signal-title" style="color:#27AE60">What's Real (Signal)</span></div>
+      <div class="signal-item">✓ Solo founding is rising structurally: 36.3% of startups in H1 2025 (Carta)</div>
+      <div class="signal-item">✓ AI genuinely accelerates prototyping — MVPs in weeks, micro-SaaS in weekends</div>
+      <div class="signal-item">✓ Lean teams can reach massive revenue: Midjourney $500M with 107–163 people</div>
+      <div class="signal-item">✓ Solo SaaS always worked pre-AI: Readlang (2012) hit €14K/mo</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-header"><div class="signal-dot" style="background:var(--red)"></div><span class="signal-title" style="color:var(--red)">What's Inflated (Noise)</span></div>
+      <div class="signal-item">✗ "One-person unicorn is imminent" — zero exist. Only 14.7% of VC cash goes to solo founders.</div>
+      <div class="signal-item">✗ "Solo" often means "was solo for 6 months" — Base44 had 8 employees at exit.</div>
+      <div class="signal-item">✗ Lean (10–160 people) gets conflated with solo (1 person) constantly.</div>
+      <div class="signal-item">✗ Pre-AI successes rebranded as AI-era proof. Same 4–5 examples power ~80% of all evidence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Predictions -->
+<section id="predictions">
+  <div class="section-title">
+    <h2>Three Predictions for 2026</h2>
+    <p class="sub">Based on cross-referencing 111 claims with independent verification</p>
+    <div class="bar"></div>
+  </div>
+  <div id="predictionsList"></div>
+</section>
+
+<!-- Footer CTA -->
+<div class="cta-card">
+  <p class="cta-title">Want this level of signal clarity for your market?</p>
+  <p class="cta-sub">TrendLoom.io detects market shifts 3–6 months early so you can move before your competitors notice.</p>
+  <a href="https://cal.com/trendloom/trendloom-intro-call" target="_blank" rel="noopener noreferrer" class="cta-btn">Book a Signal Briefing →</a>
 </div>
 
+<!-- Sources -->
+<div class="sources">Sources: Carta, Veracode, GitClear, DORA, Stack Overflow, Fast Company, Fortune, TechCrunch, Indie Hackers, HN, Reddit, X, LinkedIn</div>
+
+</main>
+
 <script>
-// Period accordion
-function togglePeriod(btn) {
-  const card = btn.closest('.period-card');
-  const wasOpen = card.classList.contains('open');
-  document.querySelectorAll('.period-card').forEach(c => c.classList.remove('open'));
-  if (!wasOpen) card.classList.add('open');
+// ── Data ──
+const timelineData = [
+  { date: "Jan 2023", type: "Inflection", event: 'Karpathy: "The hottest new programming language is English"', period: 0 },
+  { date: "Feb 2023", type: "Milestone", event: "Pieter Levels launches PhotoAI", period: 0 },
+  { date: "Mar 2023", type: "Inflection", event: "GPT-4 released", period: 0 },
+  { date: "Jul 2023", type: "Milestone", event: "PhotoAI hits $61.8K MRR", period: 0 },
+  { date: "Sep 2023", type: "Inflection", event: "Sam Altman reveals one-person unicorn betting pool", period: 0 },
+  { date: "Jan 2024", type: "Narrative", event: 'Fortune runs "One-person unicorn" cover story', period: 1 },
+  { date: "Mar 2024", type: "Inflection", event: "Cursor gains mass adoption", period: 1 },
+  { date: "Aug 2024", type: "Milestone", event: "Levels passes $100K/mo", period: 1 },
+  { date: "Sep 2024", type: "Milestone", event: "Base44 acquired by Wix for $80M (8 employees)", period: 1 },
+  { date: "Feb 2025", type: "Inflection", event: 'Karpathy coins "vibe coding" — 4.5M+ views', period: 2 },
+  { date: "Mar 2025", type: "Milestone", event: "YC W2025: 25% of startups have 95% AI-generated code", period: 2 },
+  { date: "May 2025", type: "Inflection", event: "Lovable data leak. Amodei: solo unicorn by 2026.", period: 2 },
+  { date: "Jul 2025", type: "Milestone", event: "Replit agent deletes prod DB. Builder.ai bankruptcy.", period: 2 },
+  { date: "Sep 2025", type: "Narrative", event: '"Vibe coding hangover is upon us"', period: 2 },
+  { date: "Nov 2025", type: "Milestone", event: "Cursor: $1B ARR (~150 people)", period: 2 },
+  { date: "Jan 2026", type: "Inflection", event: "Veracode: 45% AI code has security flaws", period: 2 },
+];
+
+const posterData = [
+  { person: "Pieter Levels", claim: "$138K MRR solo", reality: "Started 2014. 40+ projects, ~5% hit rate. Builds AI products but codes without AI tools (vanilla PHP/jQuery). His success predates the AI era — media repackaged a 10-year indie hacker journey as proof of the AI solo founder thesis.", verdict: "Real but Misframed" },
+  { person: "Tony Dinh", claim: "$45K/mo solo", reality: "Revenue is real, but fragile. Nearly killed when Twitter changed its API — first product had to be abandoned entirely. Demonstrates that solo revenue without diversification is one platform decision away from zero.", verdict: "Real but Fragile" },
+  { person: "Base44 / Shlomo", claim: "$80M solo exit", reality: "Framed as a solo founder exit, but had 8 employees at the time of acquisition. Wix paid $25M in retention bonuses for staff. The \u2018solo\u2019 framing erases the team that made the exit possible.", verdict: "Inflated" },
+  { person: "HeadshotPro", claim: "$300K/mo solo", reality: "Revenue was real at $300K/mo, but the founder burned out and took a 3-month break. Now has a team. The story actually demonstrates that solo scaling has a human ceiling, not that it works.", verdict: "Real but Fragile" },
+  { person: "Justin Welsh", claim: '$4.15M "AI solopreneur"', reality: "$4.15M comes from courses ABOUT solopreneurship, not from AI products. Started building his audience in 2019, pre-AI. He\u2019s a course creator labeled as an AI solopreneur — the revenue model has nothing to do with AI.", verdict: "Misattributed" },
+  { person: "Kleo 2.0", claim: "$62K MRR solo", reality: "Presented as solo, but actually has THREE co-founders with 480K combined LinkedIn followers. The distribution advantage came from the team, not from one person with AI tools.", verdict: "Inflated" },
+  { person: "Midjourney", claim: "$200M / 11 staff", reality: "Constantly cited as \u201811 people, $200M revenue.\u2019 Actually 107\u2013163 employees and ~$500M revenue. It\u2019s a lean company story, not a solo founder story. Lean \u2260 solo.", verdict: "Inflated" },
+];
+
+const verdictStyles = {
+  "Real but Misframed": { bg: "#FFF8E1", text: "#F57F17", border: "#FFE082" },
+  "Real but Fragile": { bg: "#FFF3E0", text: "#E65100", border: "#FFCC80" },
+  "Inflated": { bg: "#FFEBEE", text: "#C62828", border: "#EF9A9A" },
+  "Misattributed": { bg: "#FBE9E7", text: "#BF360C", border: "#FFAB91" },
+};
+
+const ecoData = [
+  { layer: "1. AI Products", model: "SaaS subscriptions", examples: "PhotoAI ($138K), HeadshotPro, Magai", dep: "HIGH", depColor: "#C0392B", rev: "$", revColor: "#888888" },
+  { layer: "2. Builder Tools", model: "Templates / subs", examples: "ShipFast ($80K/mo), Cursor ($1B ARR)", dep: "MEDIUM", depColor: "#E67E22", rev: "$$$", revColor: "#27AE60" },
+  { layer: "3. Course Sellers", model: "Courses, cohorts", examples: "Welsh ($4.15M/yr), Ole ($270K)", dep: "LOW", depColor: "#27AE60", rev: "$$$$", revColor: "#E8624A" },
+  { layer: "4. Content Recyclers", model: "Ads, SEO, lead gen", examples: "Medium listicles, LinkedIn posts", dep: "NONE", depColor: "#888888", rev: "$$", revColor: "#E67E22" },
+  { layer: "5. Prediction Pundits", model: "Speaking, consulting", examples: "Altman betting pool, Forbes pieces", dep: "NONE", depColor: "#888888", rev: "$$", revColor: "#E67E22" },
+];
+
+const predictions = [
+  {
+    num: "01",
+    title: 'The "6-Month Wall" becomes the dominant counter-narrative',
+    body: 'GitClear\'s 8x code duplication data, Veracode\'s 45% security flaw rate, and Fast Company\'s "vibe coding hangover" report are the leading edge. Expect a wave of postmortems from founders who hit the architectural ceiling at 3–6 months.',
+    watch: "Watch r/SaaS and r/startups — this is the deflation indicator.",
+    plain: 'In plain English: Founders who quickly built MVPs with AI are hitting a wall at 3–6 months. AI-generated code scales poorly — it duplicates, breaks, and carries security holes. The prototype works, but a production product doesn\'t grow out of it without serious refactoring. Expect a wave of public failure stories that shift the narrative from "AI = easy money" to "AI = fast start, fragile foundation."',
+  },
+  {
+    num: "02",
+    title: '"Solo" gets redefined to "lean"',
+    body: "The data shows lean teams (Midjourney: 107–163 → $500M; Cursor: ~150 → $1B ARR) are the actual breakthrough, not solo individuals. The productivity-per-employee story is real and investable. The one-person story is aspirational content marketing.",
+    watch: 'Expect the narrative to shift from "one-person unicorn" to "10-person decacorn."',
+    plain: 'In plain English: Nobody has built a billion-dollar company alone. The real story is that small teams of 10–150 people are generating revenue that used to require thousands. That\'s genuinely new and significant. But pundits keep conflating "lean" (small team) with "solo" (one person) because "one-person unicorn" gets more clicks. The hype will quietly rebrand itself as the evidence catches up.',
+  },
+  {
+    num: "03",
+    title: "Course economics will outperform product economics",
+    body: "Welsh ($4.15M from courses) and Ole ($270K from courses) prove that teaching AI solopreneurship is more profitable than doing it. This meta-layer will continue to grow as more founders try, hit the ceiling, and pivot to selling the dream.",
+    watch: "The gold rush's real winners sell shovels.",
+    plain: 'In plain English: The biggest money in the "AI solopreneur" space isn\'t made by building AI products — it\'s made by selling courses about building AI products. As more founders try, fail, and pivot, the pool of people teaching "how to be a solo AI founder" will keep growing. It\'s a gold rush where the real winners sell shovels, not dig for gold.',
+  },
+];
+
+// ── Render Functions ──
+const periodColors = ["#27AE60", "#E67E22", "#C0392B"];
+
+function renderTimeline() {
+  const container = document.getElementById('timelineContainer');
+  let html = '<div style="position:relative">';
+  html += '<div class="timeline-line"></div>';
+  timelineData.forEach((t, i) => {
+    const c = periodColors[t.period];
+    const typeStyles = {
+      Inflection: { bg: c + '18', text: c },
+      Milestone: { bg: '#F7F3F0', text: '#555' },
+      Narrative: { bg: '#E8624A18', text: '#E8624A' },
+    };
+    const ts = typeStyles[t.type];
+    html += `<div class="timeline-row" data-idx="${i}" onmouseenter="hlTimeline(${i})" onmouseleave="hlTimeline(-1)">
+      <span class="timeline-date">${t.date}</span>
+      <div class="timeline-dot" style="background:${c};box-shadow:0 0 0 2px ${c}40"></div>
+      <div class="timeline-content">
+        <span class="timeline-type" style="background:${ts.bg};color:${ts.text}">${t.type}</span>
+        <span class="timeline-event">${t.event}</span>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  container.innerHTML = html;
 }
 
-// Poster filter
-function filterPoster(btn, verdict) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+function hlTimeline(idx) {
+  document.querySelectorAll('.timeline-row').forEach((r, i) => {
+    r.classList.toggle('faded', idx !== -1 && i !== idx);
+  });
+}
 
-  const style = getComputedStyle(btn);
-  if (btn.style.getPropertyValue('--active-bg')) {
-    btn.style.borderColor = btn.style.getPropertyValue('--active-border');
-    btn.style.background = btn.style.getPropertyValue('--active-bg');
-    btn.style.color = btn.style.getPropertyValue('--active-text');
-  }
+function renderPoster() {
+  // Filters
+  const row = document.getElementById('filterRow');
+  const verdicts = Object.keys(verdictStyles);
+  const counts = {};
+  verdicts.forEach(v => counts[v] = posterData.filter(p => p.verdict === v).length);
 
-  document.querySelectorAll('.poster-card').forEach(card => {
-    if (verdict === 'all' || card.dataset.verdict === verdict) {
-      card.hidden = false;
+  let filterHtml = '<span class="filter-label">Narrative Framing:</span>';
+  filterHtml += `<button class="filter-btn active-all" onclick="filterPoster(null)">All (${posterData.length})</button>`;
+  verdicts.forEach(v => {
+    const vs = verdictStyles[v];
+    filterHtml += `<button class="filter-btn" data-verdict="${v}" onclick="filterPoster('${v}')" style="--active-bg:${vs.bg};--active-text:${vs.text};--active-border:${vs.border}">${v} (${counts[v]})</button>`;
+  });
+  row.innerHTML = filterHtml;
+
+  // Cards
+  const list = document.getElementById('posterList');
+  let html = '';
+  posterData.forEach((p, i) => {
+    const vs = verdictStyles[p.verdict];
+    html += `<div class="poster-card" data-verdict="${p.verdict}">
+      <div class="poster-top">
+        <div><span class="poster-person">${p.person}</span><span class="poster-claim">${p.claim}</span></div>
+        <span class="poster-badge" style="color:${vs.text};background:${vs.bg};border:1px solid ${vs.border}">${p.verdict}</span>
+      </div>
+      <p class="poster-reality">${p.reality}</p>
+    </div>`;
+  });
+  list.innerHTML = html;
+}
+
+function filterPoster(verdict) {
+  // Update buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const bv = btn.dataset.verdict;
+    if (!verdict && !bv) {
+      btn.classList.add('active-all');
+      btn.style.borderColor = ''; btn.style.background = ''; btn.style.color = '';
+    } else if (bv === verdict) {
+      btn.classList.remove('active-all');
+      btn.style.borderColor = btn.style.getPropertyValue('--active-border');
+      btn.style.background = btn.style.getPropertyValue('--active-bg');
+      btn.style.color = btn.style.getPropertyValue('--active-text');
     } else {
-      card.hidden = true;
+      btn.classList.remove('active-all');
+      btn.style.borderColor = ''; btn.style.background = ''; btn.style.color = '';
+    }
+  });
+  // Update cards
+  document.querySelectorAll('.poster-card').forEach(card => {
+    if (!verdict || card.dataset.verdict === verdict) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
     }
   });
 }
 
-// Active nav on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a');
-
-function updateNav() {
-  let current = '';
-  sections.forEach(s => {
-    const top = s.getBoundingClientRect().top;
-    if (top < 120) current = s.id;
+function renderEco() {
+  const container = document.getElementById('ecoRows');
+  let html = '';
+  ecoData.forEach((l, i) => {
+    const first = i === 0 ? ' style="border-radius:10px 10px 2px 2px"' : '';
+    const last = i === ecoData.length - 1 ? ' style="border-radius:2px 2px 10px 10px"' : '';
+    const st = first || last;
+    html += `<div class="eco-row"${st}>
+      <span class="eco-layer">${l.layer}</span>
+      <span class="eco-model">${l.model}</span>
+      <span class="eco-examples">${l.examples}</span>
+      <span class="eco-dep" style="color:${l.depColor}">${l.dep}</span>
+      <span class="eco-rev" style="color:${l.revColor}">${l.rev}</span>
+    </div>`;
   });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  container.innerHTML = html;
+}
+
+function renderPredictions() {
+  const container = document.getElementById('predictionsList');
+  let html = '';
+  predictions.forEach(p => {
+    html += `<div class="prediction-card">
+      <div class="prediction-inner">
+        <span class="prediction-num">${p.num}</span>
+        <div>
+          <div class="prediction-title">${p.title}</div>
+          <p class="prediction-body">${p.body}</p>
+          <div class="prediction-watch">${p.watch}</div>
+          <div class="prediction-plain">${p.plain}</div>
+        </div>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ── Period Toggle ──
+function togglePeriod(idx) {
+  document.querySelectorAll('.period-card').forEach((card, i) => {
+    if (i === idx) card.classList.toggle('open');
+    else card.classList.remove('open');
   });
 }
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
 
-// Smooth scroll
-navLinks.forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// ── Animated Numbers ──
+function animateNumbers() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        let frame = 0;
+        const total = 40;
+        function step() {
+          frame++;
+          el.textContent = Math.round((frame / total) * target) + suffix;
+          if (frame < total) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.stat-value').forEach(el => {
+    el.textContent = '0' + (el.dataset.suffix || '');
+    observer.observe(el);
   });
+}
+
+// ── Mobile Nav Toggle ──
+function toggleNav() {
+  const toggle = document.getElementById('navToggle');
+  const inner = document.getElementById('navInner');
+  inner.classList.toggle('open');
+  toggle.classList.toggle('open');
+}
+
+// ── Nav Scroll Tracking ──
+function setupNav() {
+  const navBtns = document.querySelectorAll('.nav-inner button');
+  const navSection = document.getElementById('navToggleSection');
+  const navInner = document.getElementById('navInner');
+  const navToggle = document.getElementById('navToggle');
+
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Close mobile nav after click
+      navInner.classList.remove('open');
+      navToggle.classList.remove('open');
+    });
+  });
+
+  const sections = ['overview', 'periods', 'timeline', 'poster', 'ecosystem', 'signal', 'predictions'];
+  const sectionLabels = { overview: 'Overview', periods: 'Three Periods', timeline: 'Timeline', poster: 'Poster Children', ecosystem: 'Ecosystem', signal: 'Signal vs Noise', predictions: 'Predictions' };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navBtns.forEach(b => b.classList.toggle('active', b.dataset.target === entry.target.id));
+        // Update mobile toggle section label
+        if (navSection) navSection.textContent = sectionLabels[entry.target.id] || 'Menu';
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-80px 0px -40% 0px' });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+}
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', () => {
+  renderTimeline();
+  renderPoster();
+  renderEco();
+  renderPredictions();
+  animateNumbers();
+  setupNav();
 });
 </script>
-
 </body>
 </html>
